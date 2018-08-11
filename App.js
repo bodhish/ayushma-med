@@ -8,7 +8,7 @@ export default class App extends React.Component {
       <View style={styles.app__root}>
         <View style={styles.app__headder} />
         <ScrollView style={styles.app__body}>
-          {/* {<Image source={require("./res/logo.png")} style={styles.app__headerLogo} />} */}
+          {<Image source={require("./res/logo.png")} style={styles.app__headerLogo} />}
           <Text
             style={{
               fontSize: 20
