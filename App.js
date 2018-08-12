@@ -19,7 +19,7 @@ export default class App extends React.Component {
               fontSize: 20
             }}
           >
-            Medication Reminder
+            Medication Reminder  new
           </Text>
           <View style={styles.app__cards} >
           <Text
