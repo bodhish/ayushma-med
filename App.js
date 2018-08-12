@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   app__headder: { flex: 1, backgroundColor: "#39be88" },
-  app__body: { flex: 8, flexDirection: 'column', backgroundColor: "#fff" },
+  app__body: { flex: 10, flexDirection: 'column', backgroundColor: "#fff" },
   app__footer: { flex: 1, marginTop: 20, backgroundColor: "#27885f" },
   app__headderLogo: { height: 1, width: 1 },
   app__cards: { flex: 1, marginTop:2, marginBottom: 2, backgroundColor: "#000", maxHeight: 200 }
