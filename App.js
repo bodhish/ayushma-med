@@ -18,7 +18,7 @@ export default class App extends React.Component {
   }
 
   saveInput(event) {
-    perviousValue = this.state.time
+    perviousValue = this.state.time;
     this.setState({ time: perviousValue + 1 });
   }
   render() {
@@ -30,7 +30,7 @@ export default class App extends React.Component {
               fontSize: 20
             }}
           >
-            Ayushma
+            Test
           </Text>
         </View>
         <ScrollView style={styles.app__body}>
@@ -53,24 +53,23 @@ export default class App extends React.Component {
               onChangeText={text => this.setState({ text })}
               value={this.state.text}
             />
-            <Button
-              onPress={this.saveInput}
-              title="Morning"
-              color="#27885f"
-              accessibilityLabel="Learn more about this purple button"
-            />
-             <Button
-              onPress={this.saveInput}
-              title="Afternoon"
-              color="#27885f"
-              accessibilityLabel="Learn more about this purple button"
-            />
-             <Button
-              onPress={this.saveInput}
-              title="Evening"
-              color="#27885f"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.app__buttonView}>
+              <Button
+                onPress={this.saveInput}
+                style={styles.app__button}
+                title="Morning"
+              />
+              <Button
+                onPress={this.saveInput}
+                style={styles.app__button}
+                title="Noon"
+              />
+              <Button
+                onPress={this.saveInput}
+                style={styles.app__button}
+                title="Night"
+              />
+            </View>
           </View>
           <View style={styles.app__cards} />
           <View style={styles.app__cards} />
@@ -102,8 +101,31 @@ const styles = StyleSheet.create({
   app__headderLogo: { height: 1, width: 1 },
   app__cards: {
     height: 150,
-    margin: 4,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 5,
+    marginBottom: 5,
     backgroundColor: "#ecebeb",
-    maxHeight: 200
+    maxHeight: 200,
+    borderColor: "#fff",
+    borderWidth: 0,
+    borderRadius: 5,
+  },
+  app__buttonView: {
+    marginLeft: 20,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    maxHeight: 40,
+    maxWidth: 250
+  },  app__button: {
+    backgroundColor: "#27885f",
+    width: 40,
+    height: 40,
+    borderColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 5,
+    marginLeft: 10,
+    marginRight: 10,
   }
 });
