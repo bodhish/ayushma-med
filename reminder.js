@@ -22,7 +22,7 @@ class LogoTitle extends React.Component {
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "Add your med name", time: 1 };
+    this.state = { text: "Add your med name" };
     this.saveInput = this.saveInput.bind(this);
   }
 
@@ -36,9 +36,27 @@ class HomeScreen extends React.Component {
     headerTitle: <LogoTitle />
   };
   render() {
+    const today = new Date();
+    date =
+      today.getDate() +
+      "-" +
+      parseInt(today.getMonth() + 1) +
+      "-" +
+      today.getFullYear();
     return (
       <View style={styles.app__root}>
         <View style={styles.app__headder}>
+          <Text
+            style={{
+              fontSize: 20,
+              width: 200,
+              color: "#fff",
+              fontWeight: "bold",
+              paddingTop: 40
+            }}
+          >
+            {date}
+          </Text>
           <Text
             style={{
               fontSize: 40,
@@ -46,7 +64,7 @@ class HomeScreen extends React.Component {
               fontWeight: "bold"
             }}
           >
-            REMINDER s
+            REMINDER
           </Text>
         </View>
         <ScrollView style={styles.app__body}>
@@ -55,9 +73,11 @@ class HomeScreen extends React.Component {
             <View style={styles.app__cardRight}>
               <Text
                 style={{
-                  color: "#fff",
+                  color: "#FAFA32",
                   fontSize: 20,
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                  paddingTop: 10,
+                  paddingBottom: 20
                 }}
               >
                 Paracatamol 5mg
@@ -114,9 +134,7 @@ const styles = StyleSheet.create({
   app__headder: {
     flex: 1,
     backgroundColor: "#16CB93",
-    maxHeight: 150,
-    justifyContent: "center",
-    alignItems: "center"
+    maxHeight: 150
   },
   app__body: {
     flex: 4,
@@ -143,10 +161,10 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   app__cardLeft: {
-    flex:1,
+    flex: 1
   },
   app__cardRight: {
-    flex:2
+    flex: 2
   },
   app__buttonView: {
     marginLeft: 20,
