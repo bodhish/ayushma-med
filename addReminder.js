@@ -33,6 +33,27 @@ class DetailsScreen extends React.Component {
             onPress={() => this.props.navigation.navigate("Home")}
           />
           <View style={styles.app__cards}>
+            <View style={styles.app__cardRight}>
+              <Text
+                style={{
+                  color: "#FAFA32",
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  paddingTop: 45
+                }}
+              >
+                {this.state.reminders.name}
+              </Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 20,
+                  paddingBottom: 20
+                }}
+              >
+                Morning | Evening | Night
+              </Text>
+            </View>
             <View style={styles.app__cardLeft}>
               <View style={styles.app__cardLeftCircle}>
                 <View style={styles.circleContainer}>
@@ -59,27 +80,6 @@ class DetailsScreen extends React.Component {
                   More days to go
                 </Text>
               </View>
-            </View>
-            <View style={styles.app__cardRight}>
-              <Text
-                style={{
-                  color: "#FAFA32",
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  paddingTop: 45
-                }}
-              >
-                {this.state.reminders.name}
-              </Text>
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 20,
-                  paddingBottom: 20
-                }}
-              >
-                Morning | Evening | Night
-              </Text>
             </View>
           </View>
         </View>
@@ -118,6 +118,48 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     width: 50,
     height: 50,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  app__cards: {
+    flexDirection: "row",
+    height: 150,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: "#16CB93",
+    maxHeight: 200,
+    borderColor: "#fff",
+    borderWidth: 0,
+    borderRadius: 20
+  },
+  app__cardRight: {
+    flex: 2
+  },
+  app__cardLeft: {
+    flex: 1,
+    flexDirection: "column"
+  },
+  app__cardLeftText: {
+    flex: 1,
+    marginBottom: 15,
+    paddingBottom: 10,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  app__cardLeftCircle: {
+    flex: 1,
+    marginTop: 40,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  circleContainer: {
+    position: "absolute",
+    backgroundColor: "#fff",
+    width: 90,
+    height: 90,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center"
