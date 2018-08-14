@@ -23,7 +23,7 @@ class LogoTitle extends React.Component {
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { reminders:[name,dosage,numberOfDays]};
+    this.state = { reminders: { name: "", dosage: "", numberOfDays: 3 } };
   }
 
   static navigationOptions = {
@@ -97,10 +97,10 @@ class HomeScreen extends React.Component {
                     style={{
                       color: "#6C6C6C",
                       fontWeight: "bold",
-                      fontSize: 60,
+                      fontSize: 60
                     }}
                   >
-                    3
+                    {this.state.reminders.numberOfDays}
                   </Text>
                 </View>
               </View>
