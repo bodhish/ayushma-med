@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, View, Text,TextInput, StyleSheet } from "react-native";
+import { Button, Image, View, Text, TextInput, StyleSheet } from "react-native";
 import { StackNavigator } from "react-navigation"; // Version can be specified in package.json
 
 class DetailsScreen extends React.Component {
@@ -12,8 +12,7 @@ class DetailsScreen extends React.Component {
   }
 
   saveInput(event) {
-    event.preventDefault()
-    this.setState({ time: perviousValue + 1 });
+    this.setState({ reminders: { name: event.target.value } });
   }
 
   render() {
@@ -27,29 +26,20 @@ class DetailsScreen extends React.Component {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <Button
-            title="Go to Home"
-            onPress={() => this.props.navigation.navigate("Home")}
-          />
           <View style={styles.app__cards}>
             <View style={styles.app__cardRight}>
-              <Text
+              <TextInput
+              underlineColorAndroid='transparent'
                 style={{
                   color: "#FAFA32",
                   fontSize: 20,
                   fontWeight: "bold",
-                  paddingTop: 45
+                  paddingTop: 45,
+                  marginLeft: 10,
+                  borderColor: "#16CB93"
                 }}
-              >
-                {this.state.reminders.name}
-              </Text>
-              <TextInput
-                style={{ color: "#FAFA32",
-                fontSize: 20,
-                fontWeight: "bold",
-                paddingTop: 45, borderColor: "#16CB93", borderWidth: 1 }}
-                onChangeText={this.saveInput}
-                value={this.state.text}
+                onChangeText={(text) =>this.setState({ reminders: { name: text } })}
+                placeholder={"✎ Enter your Med name!"}
               />
               <Text
                 style={{
@@ -84,12 +74,17 @@ class DetailsScreen extends React.Component {
                     paddingTop: 45
                   }}
                 >
-                  More days to go
+                  days
                 </Text>
               </View>
             </View>
           </View>
         </View>
+        <Button
+            title="Add Reminder"
+            color="#16CB93"
+            onPress={() => this.props.navigation.navigate("Home")}
+          />
       </View>
     );
   }
