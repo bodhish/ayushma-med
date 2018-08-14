@@ -21,6 +21,11 @@ class LogoTitle extends React.Component {
 }
 
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { reminders:[name,dosage,numberOfDays]};
+  }
+
   static navigationOptions = {
     // headerTitle instead of title
     headerTitle: <LogoTitle />
@@ -210,7 +215,7 @@ const styles = StyleSheet.create({
     maxHeight: 200,
     borderColor: "#fff",
     borderWidth: 0,
-    borderRadius: 5
+    borderRadius: 20
   },
   app__cardRight: {
     flex: 2
