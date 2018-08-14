@@ -5,7 +5,9 @@ import { StackNavigator } from "react-navigation"; // Version can be specified i
 class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "Add your med name" };
+    this.state = {
+      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 }
+    };
     this.saveInput = this.saveInput.bind(this);
   }
 
@@ -22,30 +24,64 @@ class DetailsScreen extends React.Component {
     const otherParam = navigation.getParam("otherParam", "some default value");
 
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
-        <View style={styles.circleContainer}>
-
-        </View>
-        <View style={styles.app__buttonView}>
+      <View style={styles.addReminder__root}>
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
           <Button
-            onPress={this.saveInput}
-            style={styles.app__button}
-            title="Morning"
+            title="Go to Home"
+            onPress={() => this.props.navigation.navigate("Home")}
           />
-          <Button
-            onPress={this.saveInput}
-            style={styles.app__button}
-            title="Noon"
-          />
-          <Button
-            onPress={this.saveInput}
-            style={styles.app__button}
-            title="Night"
-          />
+          <View style={styles.app__cards}>
+            <View style={styles.app__cardLeft}>
+              <View style={styles.app__cardLeftCircle}>
+                <View style={styles.circleContainer}>
+                  <Text
+                    style={{
+                      color: "#6C6C6C",
+                      fontWeight: "bold",
+                      fontSize: 60
+                    }}
+                  >
+                    {this.state.reminders.numberOfDays}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.app__cardLeftText}>
+                <Text
+                  style={{
+                    color: "#fff",
+                    paddingLeft: 10,
+                    fontSize: 15,
+                    paddingTop: 45
+                  }}
+                >
+                  More days to go
+                </Text>
+              </View>
+            </View>
+            <View style={styles.app__cardRight}>
+              <Text
+                style={{
+                  color: "#FAFA32",
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  paddingTop: 45
+                }}
+              >
+                {this.state.reminders.name}
+              </Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 20,
+                  paddingBottom: 20
+                }}
+              >
+                Morning | Evening | Night
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
     );
@@ -53,6 +89,10 @@ class DetailsScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  addReminder__root: {
+    flex: 1,
+    backgroundColor: "#fff"
+  },
   app__buttonView: {
     marginLeft: 20,
     flex: 1,

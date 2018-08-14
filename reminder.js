@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Image,
   ScrollView,
   View,
@@ -39,37 +38,20 @@ class HomeScreen extends React.Component {
   }
 
   render() {
-    const today = new Date();
-    date =
-      today.getDate() +
-      "-" +
-      parseInt(today.getMonth() + 1) +
-      "-" +
-      today.getFullYear();
-
     return (
       <View style={styles.app__root}>
         <View style={styles.app__header}>
           <View style={styles.app__headerText}>
             <Text
               style={{
-                fontSize: 20,
-                width: 200,
-                color: "#fff",
-                fontWeight: "bold",
-                paddingTop: 40
-              }}
-            >
-              {date}
-            </Text>
-            <Text
-              style={{
                 fontSize: 40,
                 color: "#fff",
+                marginTop: 90,
+                marginLeft: 10,
                 fontWeight: "bold"
               }}
             >
-              REMINDER
+              REMINDERS
             </Text>
           </View>
           <View style={styles.app__HeaderCircleContainer}>
@@ -232,8 +214,8 @@ const styles = StyleSheet.create({
   circleContainer: {
     position: "absolute",
     backgroundColor: "#fff",
-    width: 95,
-    height: 95,
+    width: 90,
+    height: 90,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center"
