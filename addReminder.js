@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, View, Text, StyleSheet } from "react-native";
+import { Button, Image, View, Text,TextInput, StyleSheet } from "react-native";
 import { StackNavigator } from "react-navigation"; // Version can be specified in package.json
 
 class DetailsScreen extends React.Component {
@@ -12,8 +12,7 @@ class DetailsScreen extends React.Component {
   }
 
   saveInput(event) {
-    perviousValue = this.state.time;
-    Alert.alert("You tapped the button!");
+    event.preventDefault()
     this.setState({ time: perviousValue + 1 });
   }
 
@@ -44,6 +43,14 @@ class DetailsScreen extends React.Component {
               >
                 {this.state.reminders.name}
               </Text>
+              <TextInput
+                style={{ color: "#FAFA32",
+                fontSize: 20,
+                fontWeight: "bold",
+                paddingTop: 45, borderColor: "#16CB93", borderWidth: 1 }}
+                onChangeText={this.saveInput}
+                value={this.state.text}
+              />
               <Text
                 style={{
                   color: "#fff",
