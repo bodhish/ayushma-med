@@ -23,7 +23,9 @@ class LogoTitle extends React.Component {
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { reminders: { name: "", dosage: "", numberOfDays: 3 } };
+    this.state = {
+      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 }
+    };
   }
 
   static navigationOptions = {
@@ -126,7 +128,7 @@ class HomeScreen extends React.Component {
                   paddingTop: 45
                 }}
               >
-                Paracatamol 5mg
+              {this.state.reminders.name}
               </Text>
               <Text
                 style={{
@@ -139,7 +141,7 @@ class HomeScreen extends React.Component {
               </Text>
             </View>
           </View>
-          <View style={styles.app__cards} />
+          {/* <View style={styles.app__cards} />
           <View style={styles.app__cards} />
           <View style={styles.app__cards} />
           <View style={styles.app__cards} />
@@ -147,17 +149,7 @@ class HomeScreen extends React.Component {
             style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
           >
             <Text>Home Screen</Text>
-            <Button
-              title="Go to Details"
-              onPress={() => {
-                /* 1. Navigate to the Details route with params */
-                this.props.navigation.navigate("AddReminder", {
-                  itemId: 86,
-                  otherParam: "anything you want here"
-                });
-              }}
-            />
-          </View>
+          </View> */}
         </ScrollView>
       </View>
     );
