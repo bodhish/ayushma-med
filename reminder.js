@@ -4,6 +4,7 @@ import {
   Image,
   ScrollView,
   View,
+  TouchableOpacity,
   Text,
   StyleSheet
 } from "react-native";
@@ -20,21 +21,16 @@ class LogoTitle extends React.Component {
 }
 
 class HomeScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: "Add your med name" };
-    this.saveInput = this.saveInput.bind(this);
-  }
-
-  saveInput(event) {
-    perviousValue = this.state.time;
-    Alert.alert("You tapped the button!");
-    this.setState({ time: perviousValue + 1 });
-  }
   static navigationOptions = {
     // headerTitle instead of title
     headerTitle: <LogoTitle />
   };
+
+  addNewReminder(event) {
+    event.preventDefault();
+    this.props.navigation.navigate("AddReminder");
+  }
+
   render() {
     const today = new Date();
     date =
@@ -43,62 +39,99 @@ class HomeScreen extends React.Component {
       parseInt(today.getMonth() + 1) +
       "-" +
       today.getFullYear();
+
     return (
       <View style={styles.app__root}>
-        <View style={styles.app__headder}>
-          <Text
-            style={{
-              fontSize: 20,
-              width: 200,
-              color: "#fff",
-              fontWeight: "bold",
-              paddingTop: 40
-            }}
-          >
-            {date}
-          </Text>
-          <Text
-            style={{
-              fontSize: 40,
-              color: "#fff",
-              fontWeight: "bold"
-            }}
-          >
-            REMINDER
-          </Text>
+        <View style={styles.app__header}>
+          <View style={styles.app__headerText}>
+            <Text
+              style={{
+                fontSize: 20,
+                width: 200,
+                color: "#fff",
+                fontWeight: "bold",
+                paddingTop: 40
+              }}
+            >
+              {date}
+            </Text>
+            <Text
+              style={{
+                fontSize: 40,
+                color: "#fff",
+                fontWeight: "bold"
+              }}
+            >
+              REMINDER
+            </Text>
+          </View>
+          <View style={styles.app__HeaderCircleContainer}>
+            <TouchableOpacity
+              style={styles.app__button}
+              onPress={this.addNewReminder.bind(this)}
+            >
+              <Text
+                style={{
+                  fontSize: 60,
+                  color: "#6C6C6C",
+                  fontWeight: "bold",
+                  marginRight: 2
+                }}
+              >
+                +
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
         <ScrollView style={styles.app__body}>
           <View style={styles.app__cards}>
-            <View style={styles.app__cardLeft} />
+            <View style={styles.app__cardLeft}>
+              <View style={styles.app__cardLeftCircle}>
+                <View style={styles.circleContainer}>
+                  <Text
+                    style={{
+                      color: "#6C6C6C",
+                      fontWeight: "bold",
+                      fontSize: 60,
+                    }}
+                  >
+                    3
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.app__cardLeftText}>
+                <Text
+                  style={{
+                    color: "#fff",
+                    paddingLeft: 10,
+                    fontSize: 15,
+                    paddingTop: 45
+                  }}
+                >
+                  More days to go
+                </Text>
+              </View>
+            </View>
             <View style={styles.app__cardRight}>
               <Text
                 style={{
                   color: "#FAFA32",
                   fontSize: 20,
                   fontWeight: "bold",
-                  paddingTop: 10,
-                  paddingBottom: 20
+                  paddingTop: 45
                 }}
               >
                 Paracatamol 5mg
               </Text>
-              <View style={styles.app__buttonView}>
-                <Button
-                  onPress={this.saveInput}
-                  style={styles.app__button}
-                  title="Morning"
-                />
-                <Button
-                  onPress={this.saveInput}
-                  style={styles.app__button}
-                  title="Noon"
-                />
-                <Button
-                  onPress={this.saveInput}
-                  style={styles.app__button}
-                  title="Night"
-                />
-              </View>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 20,
+                  paddingBottom: 20
+                }}
+              >
+                Morning | Evening | Night
+              </Text>
             </View>
           </View>
           <View style={styles.app__cards} />
@@ -131,10 +164,29 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  app__headder: {
-    flex: 1,
+  app__header: {
+    flexDirection: "row",
     backgroundColor: "#16CB93",
-    maxHeight: 150
+    height: 150
+  },
+  app__headerText: {
+    flex: 3
+  },
+  app__HeaderCircleContainer: {
+    flex: 1,
+    marginTop: 15,
+    marginRight: 15,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  HeaderCircle: {
+    position: "absolute",
+    backgroundColor: "#fff",
+    width: 80,
+    height: 80,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center"
   },
   app__body: {
     flex: 4,
@@ -160,29 +212,44 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderRadius: 5
   },
-  app__cardLeft: {
-    flex: 1
-  },
   app__cardRight: {
     flex: 2
   },
-  app__buttonView: {
-    marginLeft: 20,
+  app__cardLeft: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    maxHeight: 40,
-    maxWidth: 250
+    flexDirection: "column"
+  },
+  app__cardLeftText: {
+    flex: 1,
+    marginBottom: 15,
+    paddingBottom: 10,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  app__cardLeftCircle: {
+    flex: 1,
+    marginTop: 40,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  circleContainer: {
+    position: "absolute",
+    backgroundColor: "#fff",
+    width: 95,
+    height: 95,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center"
   },
   app__button: {
-    backgroundColor: "#27885f",
-    width: 40,
-    height: 40,
-    borderColor: "#fff",
-    borderWidth: 1,
-    borderRadius: 5,
+    backgroundColor: "#fff",
+    width: 80,
+    height: 80,
+    borderRadius: 100,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 
