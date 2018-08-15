@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, View, Text, TextInput, StyleSheet } from "react-native";
+import { Button, TouchableOpacity, Image, View, Text, TextInput, StyleSheet } from "react-native";
 import { StackNavigator } from "react-navigation"; // Version can be specified in package.json
 
 class DetailsScreen extends React.Component {
@@ -12,8 +12,14 @@ class DetailsScreen extends React.Component {
   }
 
   saveInput(event) {
+    event.preventDefault();
     this.setState({ reminders: { name: event.target.value } });
   }
+  reminderProperties(event) {
+    event.preventDefault();
+    this.props.navigation.navigate("AddReminder");
+  }
+
 
   render() {
     return (
@@ -24,7 +30,7 @@ class DetailsScreen extends React.Component {
           <View style={styles.addReminder__cards}>
             <View style={styles.addReminder__cardLeft}>
               <TextInput
-              underlineColorAndroid='transparent'
+                underlineColorAndroid="transparent"
                 style={{
                   color: "#FAFA32",
                   fontSize: 20,
@@ -33,7 +39,9 @@ class DetailsScreen extends React.Component {
                   marginLeft: 10,
                   borderColor: "#16CB93"
                 }}
-                onChangeText={(text) =>this.setState({ reminders: { name: text } })}
+                onChangeText={text =>
+                  this.setState({ reminders: { name: text } })
+                }
                 placeholder={"✎ Enter your Med name!"}
               />
               <Text
@@ -45,6 +53,23 @@ class DetailsScreen extends React.Component {
               >
                 Morning | Evening | Night
               </Text>
+              <View style={styles.app__HeaderCircleContainer}>
+                <TouchableOpacity
+                  style={styles.app__button}
+                  onPress={this.reminderProperties.bind(this)}
+                >
+                  <Text
+                    style={{
+                      fontSize: 60,
+                      color: "#6C6C6C",
+                      fontWeight: "bold",
+                      marginRight: 2
+                    }}
+                  >
+                    +
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
             <View style={styles.addReminder__cardRight}>
               <View style={styles.addReminder__cardRightCircle}>
@@ -76,10 +101,10 @@ class DetailsScreen extends React.Component {
           </View>
         </View>
         <Button
-            title="Add Reminder"
-            color="#16CB93"
-            onPress={() => this.props.navigation.navigate("Home")}
-          />
+          title="Add Reminder"
+          color="#16CB93"
+          onPress={() => this.props.navigation.navigate("Home")}
+        />
       </View>
     );
   }
@@ -129,6 +154,26 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
+  HeaderCircle: {
+    position: "absolute",
+    backgroundColor: "#fff",
+    width: 80,
+    height: 80,
+    borderRadius: 100,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  app__button: {
+    backgroundColor: "#fff",
+    width: 80,
+    height: 80,
+    borderRadius: 100,
+    marginLeft: 10,
+    marginRight: 10,
     alignItems: "center",
     justifyContent: "center"
   }
