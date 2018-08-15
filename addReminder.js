@@ -57,7 +57,15 @@ class DetailsScreen extends React.Component {
                     style={styles.app__button}
                     onPress={this.reminderProperties.bind(this)}
                   >
-                    <Text style={styles.addReminder__buttonGroupText}>☼</Text>
+                    <Text
+                      style={{
+                        fontSize: 40,
+                        color: "#6C6C6C",
+                        paddingBottom: 12
+                      }}
+                    >
+                      ☼
+                    </Text>
                   </TouchableOpacity>
                 </View>
                 <View style={styles.app__HeaderCircleContainer}>
@@ -65,7 +73,15 @@ class DetailsScreen extends React.Component {
                     style={styles.app__button}
                     onPress={this.reminderProperties.bind(this)}
                   >
-                    <Text style={styles.addReminder__buttonGroupText}>◉</Text>
+                    <Text
+                      style={{
+                        fontSize: 60,
+                        color: "#6C6C6C",
+                        paddingBottom: 10
+                      }}
+                    >
+                      ◉
+                    </Text>
                   </TouchableOpacity>
                 </View>
                 <View style={styles.app__HeaderCircleContainer}>
@@ -182,6 +198,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginLeft: 10,
     marginRight: 10,
+    marginBottom: 10,
     alignItems: "center",
     justifyContent: "center"
   },
@@ -193,9 +210,8 @@ const styles = StyleSheet.create({
   },
   addReminder__buttonGroupText: {
     fontSize: 40,
-    color: "#6C6C6C",
+    color: "#6C6C6C"
     // fontWeight: "bold",
-  
   }
 });
 module.exports = DetailsScreen;
