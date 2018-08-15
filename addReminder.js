@@ -14,7 +14,11 @@ class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reminders: {id: 1, name: "Paracatamol 5mg", morning: false, afternoon:false, night:false, numberOfDays: 3 }
+      name: "",
+      morning: false,
+      afternoon: false,
+      night: false,
+      numberOfDays: 3
     };
     this.saveInput = this.saveInput.bind(this);
   }
@@ -47,7 +51,7 @@ class DetailsScreen extends React.Component {
                   borderColor: "#16CB93"
                 }}
                 onChangeText={text =>
-                  this.setState({ reminders: { name: text } })
+                  this.setState({name: text })
                 }
                 placeholder={"✎ Enter your Med name!"}
               />
@@ -55,18 +59,24 @@ class DetailsScreen extends React.Component {
                 <View style={styles.app__HeaderCircleContainer}>
                   <TouchableOpacity
                     style={styles.app__button}
-                    onPress= {() => {this.setState(prevstate =>({ reminders: { morning: !prevstate.morning }}))}}
+                    onPress={() => {
+                      this.setState(prevstate =>({ morning: !prevstate.morning}));
+                    }}
                   >
                     <Text
-                      style={ this.state.reminders.morning ? {
-                        fontSize: 40,
-                        color: "#6C6C6C",
-                        paddingBottom: 12
-                      } : {
-                        fontSize: 40,
-                        color: "#fff",
-                        paddingBottom: 12
-                      } }
+                      style={
+                        this.state.morning
+                          ? {
+                              fontSize: 40,
+                              color: "#108D23",
+                              paddingBottom: 12
+                            }
+                          : {
+                              fontSize: 40,
+                              color: "#6C6C6C",
+                              paddingBottom: 12
+                            }
+                      }
                     >
                       ☼
                     </Text>
@@ -118,7 +128,7 @@ class DetailsScreen extends React.Component {
                       fontSize: 60
                     }}
                   >
-                    {this.state.reminders.numberOfDays}
+                    {this.state.numberOfDays}
                   </Text>
                 </View>
               </View>
