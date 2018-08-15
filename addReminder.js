@@ -65,7 +65,7 @@ class DetailsScreen extends React.Component {
                     style={styles.app__button}
                     onPress={this.reminderProperties.bind(this)}
                   >
-                    <Text style={styles.addReminder__buttonGroupText}>☀</Text>
+                    <Text style={styles.addReminder__buttonGroupText}>◉</Text>
                   </TouchableOpacity>
                 </View>
                 <View style={styles.app__HeaderCircleContainer}>
@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   addReminder__buttonGroupText: {
-    fontSize: 60,
+    fontSize: 40,
     color: "#6C6C6C",
     // fontWeight: "bold",
-    // marginRight: 2
+  
   }
 });
 module.exports = DetailsScreen;
