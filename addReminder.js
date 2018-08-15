@@ -20,18 +20,7 @@ class DetailsScreen extends React.Component {
       night: false,
       numberOfDays: 3
     };
-    this.saveInput = this.saveInput.bind(this);
   }
-
-  saveInput(event) {
-    event.preventDefault();
-    this.setState({ reminders: { name: event.target.value } });
-  }
-  reminderProperties(event) {
-    event.preventDefault();
-    this.props.navigation.navigate("AddReminder");
-  }
-
   render() {
     return (
       <View style={styles.addReminder__root}>
