@@ -50,9 +50,7 @@ class DetailsScreen extends React.Component {
                   marginLeft: 10,
                   borderColor: "#16CB93"
                 }}
-                onChangeText={text =>
-                  this.setState({name: text })
-                }
+                onChangeText={text => this.setState({ name: text })}
                 placeholder={"✎ Enter your Med name!"}
               />
               <View style={styles.addReminder__buttonGroup}>
@@ -60,22 +58,16 @@ class DetailsScreen extends React.Component {
                   <TouchableOpacity
                     style={styles.app__button}
                     onPress={() => {
-                      this.setState(prevstate =>({ morning: !prevstate.morning}));
+                      this.setState(prevstate => ({
+                        morning: !prevstate.morning
+                      }));
                     }}
                   >
                     <Text
                       style={
                         this.state.morning
-                          ? {
-                              fontSize: 40,
-                              color: "#108D23",
-                              paddingBottom: 12
-                            }
-                          : {
-                              fontSize: 40,
-                              color: "#6C6C6C",
-                              paddingBottom: 12
-                            }
+                          ? styles.addReminder__morningTrue
+                          : styles.addReminder__morning
                       }
                     >
                       ☼
@@ -235,7 +227,16 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#6C6C6C",
     transform: [{ rotate: "-30deg" }]
-    // fontWeight: "bold",
+  },
+  addReminder__morning: {
+    fontSize: 40,
+    color: "#6C6C6C",
+    paddingBottom: 12
+  },
+  addReminder__morningTrue: {
+    fontSize: 40,
+    color: "#108D23",
+    paddingBottom: 12
   }
 });
 module.exports = DetailsScreen;
