@@ -89,7 +89,16 @@ class DetailsScreen extends React.Component {
                     style={styles.app__button}
                     onPress={this.reminderProperties.bind(this)}
                   >
-                    <Text style={styles.addReminder__buttonGroupText}>☾</Text>
+                    <Text
+                      style={{
+                        fontSize: 40,
+                        color: "#6C6C6C",
+                        paddingRight: 5,
+                        transform: [{ rotate: "-30deg" }]
+                      }}
+                    >
+                      ☾
+                    </Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -210,7 +219,8 @@ const styles = StyleSheet.create({
   },
   addReminder__buttonGroupText: {
     fontSize: 40,
-    color: "#6C6C6C"
+    color: "#6C6C6C",
+    transform: [{ rotate: "-30deg" }]
     // fontWeight: "bold",
   }
 });
