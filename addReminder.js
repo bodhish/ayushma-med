@@ -14,7 +14,7 @@ class DetailsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 }
+      reminders: {id: 1, name: "Paracatamol 5mg", morning: false, afternoon:false, night:false, numberOfDays: 3 }
     };
     this.saveInput = this.saveInput.bind(this);
   }
@@ -55,14 +55,18 @@ class DetailsScreen extends React.Component {
                 <View style={styles.app__HeaderCircleContainer}>
                   <TouchableOpacity
                     style={styles.app__button}
-                    onPress={this.reminderProperties.bind(this)}
+                    onPress= {() => {this.setState(prevstate =>({ reminders: { morning: !prevstate.morning }}))}}
                   >
                     <Text
-                      style={{
+                      style={ this.state.reminders.morning ? {
                         fontSize: 40,
                         color: "#6C6C6C",
                         paddingBottom: 12
-                      }}
+                      } : {
+                        fontSize: 40,
+                        color: "#fff",
+                        paddingBottom: 12
+                      } }
                     >
                       ☼
                     </Text>
