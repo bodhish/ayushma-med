@@ -6,6 +6,7 @@ import {
   Keyboard,
   View,
   Text,
+  ToastAndroid,
   TextInput,
   StyleSheet
 } from "react-native";
@@ -139,7 +140,9 @@ class DetailsScreen extends React.Component {
         <Button
           title="Add Reminder"
           color="#16CB93"
-          onPress={() => this.props.navigation.navigate("Home")}
+          onPress={() => {
+            ToastAndroid.show('We will remind you :)', ToastAndroid.SHORT);
+            this.props.navigation.navigate("Home")}}
         />
       </View>
       </TouchableWithoutFeedback>
