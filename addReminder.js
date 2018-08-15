@@ -2,13 +2,13 @@ import React from "react";
 import {
   Button,
   TouchableOpacity,
-  Image,
+  TouchableWithoutFeedback,
+  Keyboard,
   View,
   Text,
   TextInput,
   StyleSheet
 } from "react-native";
-import { StackNavigator } from "react-navigation"; // Version can be specified in package.json
 
 class DetailsScreen extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class DetailsScreen extends React.Component {
   }
   render() {
     return (
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.addReminder__root}>
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -141,6 +142,7 @@ class DetailsScreen extends React.Component {
           onPress={() => this.props.navigation.navigate("Home")}
         />
       </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
