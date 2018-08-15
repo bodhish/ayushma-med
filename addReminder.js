@@ -58,8 +58,8 @@ class DetailsScreen extends React.Component {
                   <TouchableOpacity
                     style={styles.app__button}
                     onPress={() => {
-                      this.setState(prevstate => ({
-                        morning: !prevstate.morning
+                      this.setState(prevState => ({
+                        morning: !prevState.morning
                       }));
                     }}
                   >
@@ -77,14 +77,18 @@ class DetailsScreen extends React.Component {
                 <View style={styles.app__HeaderCircleContainer}>
                   <TouchableOpacity
                     style={styles.app__button}
-                    onPress={this.reminderProperties.bind(this)}
+                    onPress={() => {
+                      this.setState(prevState => ({
+                        afternoon: !prevState.afternoon
+                      }));
+                    }}
                   >
                     <Text
-                      style={{
-                        fontSize: 60,
-                        color: "#6C6C6C",
-                        paddingBottom: 10
-                      }}
+                      style={
+                        this.state.afternoon
+                          ? styles.addReminder__afternoonTrue
+                          : styles.addReminder__afternoon
+                      }
                     >
                       ◉
                     </Text>
@@ -93,15 +97,18 @@ class DetailsScreen extends React.Component {
                 <View style={styles.app__HeaderCircleContainer}>
                   <TouchableOpacity
                     style={styles.app__button}
-                    onPress={this.reminderProperties.bind(this)}
+                    onPress={() => {
+                      this.setState(prevState => ({
+                        night: !prevState.night
+                      }));
+                    }}
                   >
                     <Text
-                      style={{
-                        fontSize: 40,
-                        color: "#6C6C6C",
-                        paddingRight: 5,
-                        transform: [{ rotate: "-30deg" }]
-                      }}
+                      style={
+                        this.state.night
+                          ? styles.addReminder__nightTrue
+                          : styles.addReminder__night
+                      }
                     >
                       ☾
                     </Text>
@@ -223,11 +230,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row"
   },
-  addReminder__buttonGroupText: {
-    fontSize: 40,
-    color: "#6C6C6C",
-    transform: [{ rotate: "-30deg" }]
-  },
   addReminder__morning: {
     fontSize: 40,
     color: "#6C6C6C",
@@ -237,6 +239,28 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#108D23",
     paddingBottom: 12
+  },
+  addReminder__afternoon: {
+    fontSize: 60,
+    color: "#6C6C6C",
+    paddingBottom: 10
+  },
+  addReminder__afternoonTrue: {
+    fontSize: 60,
+    color: "#108D23",
+    paddingBottom: 10
+  },
+  addReminder__night: {
+    fontSize: 40,
+    color: "#6C6C6C",
+    paddingRight: 5,
+    transform: [{ rotate: "-30deg" }]
+  },
+  addReminder__nightTrue: {
+    fontSize: 40,
+    color: "#108D23",
+    paddingRight: 5,
+    transform: [{ rotate: "-30deg" }]
   }
 });
 module.exports = DetailsScreen;
