@@ -10,7 +10,7 @@ const RootStack = createStackNavigator(
     AddReminder: AddReminder,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'AddReminder',
   }
 );
 

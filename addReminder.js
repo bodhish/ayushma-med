@@ -1,5 +1,13 @@
 import React from "react";
-import { Button, TouchableOpacity, Image, View, Text, TextInput, StyleSheet } from "react-native";
+import {
+  Button,
+  TouchableOpacity,
+  Image,
+  View,
+  Text,
+  TextInput,
+  StyleSheet
+} from "react-native";
 import { StackNavigator } from "react-navigation"; // Version can be specified in package.json
 
 class DetailsScreen extends React.Component {
@@ -19,7 +27,6 @@ class DetailsScreen extends React.Component {
     event.preventDefault();
     this.props.navigation.navigate("AddReminder");
   }
-
 
   render() {
     return (
@@ -44,33 +51,34 @@ class DetailsScreen extends React.Component {
                 }
                 placeholder={"✎ Enter your Med name!"}
               />
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 20,
-                  paddingBottom: 20
-                }}
-              >
-                Morning | Evening | Night
-              </Text>
-              <View style={styles.app__HeaderCircleContainer}>
-                <TouchableOpacity
-                  style={styles.app__button}
-                  onPress={this.reminderProperties.bind(this)}
-                >
-                  <Text
-                    style={{
-                      fontSize: 60,
-                      color: "#6C6C6C",
-                      fontWeight: "bold",
-                      marginRight: 2
-                    }}
+              <View style={styles.addReminder__buttonGroup}>
+                <View style={styles.app__HeaderCircleContainer}>
+                  <TouchableOpacity
+                    style={styles.app__button}
+                    onPress={this.reminderProperties.bind(this)}
                   >
-                    +
-                  </Text>
-                </TouchableOpacity>
+                    <Text style={styles.addReminder__buttonGroupText}>+</Text>
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.app__HeaderCircleContainer}>
+                  <TouchableOpacity
+                    style={styles.app__button}
+                    onPress={this.reminderProperties.bind(this)}
+                  >
+                    <Text style={styles.addReminder__buttonGroupText}>-</Text>
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.app__HeaderCircleContainer}>
+                  <TouchableOpacity
+                    style={styles.app__button}
+                    onPress={this.reminderProperties.bind(this)}
+                  >
+                    <Text style={styles.addReminder__buttonGroupText}>*</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
+
             <View style={styles.addReminder__cardRight}>
               <View style={styles.addReminder__cardRightCircle}>
                 <View style={styles.circleContainer}>
@@ -169,13 +177,25 @@ const styles = StyleSheet.create({
   },
   app__button: {
     backgroundColor: "#fff",
-    width: 80,
-    height: 80,
+    width: 50,
+    height: 50,
     borderRadius: 100,
     marginLeft: 10,
     marginRight: 10,
     alignItems: "center",
     justifyContent: "center"
+  },
+  addReminder__buttonGroup: {
+    marginLeft: 30,
+    marginTop: 10,
+    flex: 1,
+    flexDirection: "row"
+  },
+  addReminder__buttonGroupText: {
+    fontSize: 60,
+    color: "#6C6C6C",
+    fontWeight: "bold",
+    marginRight: 2
   }
 });
 module.exports = DetailsScreen;
