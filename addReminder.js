@@ -21,8 +21,8 @@ class DetailsScreen extends React.Component {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <View style={styles.app__cards}>
-            <View style={styles.app__cardRight}>
+          <View style={styles.addReminder__cards}>
+            <View style={styles.addReminder__cardLeft}>
               <TextInput
               underlineColorAndroid='transparent'
                 style={{
@@ -46,8 +46,8 @@ class DetailsScreen extends React.Component {
                 Morning | Evening | Night
               </Text>
             </View>
-            <View style={styles.app__cardLeft}>
-              <View style={styles.app__cardLeftCircle}>
+            <View style={styles.addReminder__cardRight}>
+              <View style={styles.addReminder__cardRightCircle}>
                 <View style={styles.circleContainer}>
                   <Text
                     style={{
@@ -60,7 +60,7 @@ class DetailsScreen extends React.Component {
                   </Text>
                 </View>
               </View>
-              <View style={styles.app__cardLeftText}>
+              <View style={styles.addReminder__cardRightText}>
                 <Text
                   style={{
                     color: "#fff",
@@ -90,36 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  app__buttonView: {
-    marginLeft: 20,
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    maxHeight: 40,
-    maxWidth: 250
-  },
-  app__button: {
-    backgroundColor: "#27885f",
-    width: 40,
-    height: 40,
-    borderColor: "#fff",
-    borderWidth: 1,
-    borderRadius: 5,
-    marginLeft: 10,
-    marginRight: 10
-  },
-  circleContainer: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    backgroundColor: "#fff",
-    width: 50,
-    height: 50,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  app__cards: {
+  addReminder__cards: {
     flexDirection: "row",
     height: 150,
     marginLeft: 20,
@@ -132,21 +103,21 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderRadius: 20
   },
-  app__cardRight: {
+  addReminder__cardLeft: {
     flex: 2
   },
-  app__cardLeft: {
+  addReminder__cardRight: {
     flex: 1,
     flexDirection: "column"
   },
-  app__cardLeftText: {
+  addReminder__cardRightText: {
     flex: 1,
     marginBottom: 15,
     paddingBottom: 10,
     alignItems: "center",
     justifyContent: "center"
   },
-  app__cardLeftCircle: {
+  addReminder__cardRightCircle: {
     flex: 1,
     marginTop: 40,
     alignItems: "center",
