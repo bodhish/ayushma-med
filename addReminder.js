@@ -20,7 +20,7 @@ class DetailsScreen extends React.Component {
       morning: false,
       afternoon: false,
       night: false,
-      numberOfDays: 3
+      numberOfDays: 1
     };
   }
   render() {
@@ -111,10 +111,23 @@ class DetailsScreen extends React.Component {
 
               <View style={styles.addReminder__cardRight}>
                 <View style={styles.addReminder__cardRightCircle}>
-                  <View style={styles.circleContainer}>
+                  <TouchableOpacity style={styles.circleContainer}>
+                    <Text
+                      style={{
+                        color: "#6C6C6C",
+                        fontWeight: "bold",
+                        fontSize: 60
+                      }}
+                    >
+                      {this.state.numberOfDays}
+                    </Text>
                     <Picker
-                      // selectedValue={this.state.numberOfDays}
-                      style={{ height: 50, width: 100 }}
+                      style={{
+                        position: "absolute",
+
+                        width: 1000,
+                        height: 1000
+                      }}
                       onValueChange={(itemValue, itemIndex) =>
                         this.setState({ numberOfDays: itemValue })
                       }
@@ -127,16 +140,7 @@ class DetailsScreen extends React.Component {
                       <Picker.Item label="6 days" value="6" />
                       <Picker.Item label="1 week" value="7" />
                     </Picker>
-                    <Text
-                      style={{
-                        color: "#6C6C6C",
-                        fontWeight: "bold",
-                        fontSize: 60
-                      }}
-                    >
-                      {this.state.numberOfDays}
-                    </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View style={styles.addReminder__cardRightText}>
                   <Text
