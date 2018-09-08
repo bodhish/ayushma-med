@@ -9,6 +9,7 @@ import {
   ToastAndroid,
   Picker,
   TextInput,
+  AsyncStorage,
   StyleSheet
 } from "react-native";
 
@@ -22,6 +23,38 @@ class DetailsScreen extends React.Component {
       night: false,
       numberOfDays: 1
     };
+  }
+
+  saveData() {
+    ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
+    
+    let reminder1 = {
+      reminders:{
+      name: this.state.name,
+      morning: this.state.morning,
+      afternoon: this.state.afternoon,
+      night: this.state.night,
+      numberOfDays: this.state.numberOfDays}
+    };
+    // You only need to define what will be added or updated
+    // let UID123_delta = {
+    //   age: 31,
+    //   traits: { eyes: "blue", shoe_size: 10 }
+    // };
+
+    const data = AsyncStorage.getItem("Data", (err, result) => {
+      return JSON.parse(result);
+    });
+    console.log("data" + data)
+
+    AsyncStorage.setItem("Data", JSON.stringify(reminder1), () => {
+      AsyncStorage.mergeItem("Data", JSON.stringify(reminder1), () => {
+        AsyncStorage.getItem("Data", (err, result) => {
+          console.log("add" + result);
+        });
+      });
+    });
+    this.props.navigation.navigate("Home");
   }
   render() {
     return (
@@ -161,8 +194,7 @@ class DetailsScreen extends React.Component {
             title="Add Reminder"
             color="#16CB93"
             onPress={() => {
-              ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
-              this.props.navigation.navigate("Home");
+              this.saveData();
             }}
           />
         </View>

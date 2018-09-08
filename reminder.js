@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   Text,
+  AsyncStorage,
   StyleSheet
 } from "react-native";
 
@@ -23,7 +24,8 @@ class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 }
+      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 },
+      test : ""
     };
   }
 
@@ -31,6 +33,14 @@ class HomeScreen extends React.Component {
     // headerTitle instead of title
     headerTitle: <LogoTitle />
   };
+
+  componentDidMount = () => {
+  
+    const data1 = AsyncStorage.getItem("Data", (err, result) => {
+     console.log("result" + result)
+    });
+    console.log("data" + data1);
+  }
 
   addNewReminder(event) {
     event.preventDefault();
