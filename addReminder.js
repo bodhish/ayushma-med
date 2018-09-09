@@ -30,43 +30,21 @@ class DetailsScreen extends React.Component {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
 
 
-    AsyncStorage.getAllKeys((err, keys) => {
-        console.log(keys.length);
-    });
+    // AsyncStorage.getAllKeys((err, keys) => {
+    //   newKey = keys.length+1
+    //     console.log(newKey);
+    //     this.setState({id: newKey})
+    // });
     
-
-    AsyncStorage.getItem("Data", (err, oldData) => {
-      data = JSON.parse(oldData);
-      numberOfKeys = Object.keys(data);
-      console.log("Keys" + numberOfKeys);
-      newKey = "X" + numberOfKeys.length;
-      this.setState({id: newKey})
-
-    });
-
-    let reminder1 = {
-      reminders: {
+    let reminder= {
         name: this.state.name,
         morning: this.state.morning,
         afternoon: this.state.afternoon,
         night: this.state.night,
         numberOfDays: this.state.numberOfDays
-      }
     };
-
-    const newId = this.state.id;
-    let reminder2 = {
-      newId: {
-        name: this.state.name,
-        morning: this.state.morning,
-        afternoon: this.state.afternoon,
-        night: this.state.night,
-        numberOfDays: 1
-      }
-    };
-
-        AsyncStorage.mergeItem("Data", JSON.stringify(reminder2), () => {
-          AsyncStorage.getItem("Data", (err, result) => {
+        AsyncStorage.setItem(JSON.stringify(this.state.id), JSON.stringify(reminder), () => {
+          AsyncStorage.getItem(JSON.stringify(this.state.id), (err, result) => {
             console.log("add" + result);
             const dataNew = JSON.parse(result);
             console.log("json" + dataNew.reminders);

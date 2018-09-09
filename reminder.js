@@ -24,8 +24,11 @@ class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reminders: { id: 1, name: "Paracatamol 5mg", dosage: "", numberOfDays: 3 },
-      test : ""
+      name: "",
+      morning: false,
+      afternoon: false,
+      night: false,
+      numberOfDays: 1
     };
   }
 
@@ -35,16 +38,24 @@ class HomeScreen extends React.Component {
   };
 
   componentDidMount = () => {
-  
-    const data1 = AsyncStorage.getItem("Data", (err, result) => {
-     console.log("result" + result)
+    const data1 = AsyncStorage.getItem("0", (err, result) => {
+      console.log("result" + result);
+      data = JSON.parse(result);
+      this.setState({
+        name: data.name,
+        morning: data.morning,
+        afternoon: data.afternoon,
+        night: data.night,
+        numberOfDays: data.numberOfDays
+      });
+      console.log(data.morning);
     });
-    console.log("data" + data1);
-  }
+  };
 
   addNewReminder(event) {
     event.preventDefault();
     this.props.navigation.navigate("AddReminder");
+    this.componentDidMount();
   }
 
   render() {
@@ -94,7 +105,7 @@ class HomeScreen extends React.Component {
                       fontSize: 60
                     }}
                   >
-                    {this.state.reminders.numberOfDays}
+                    {this.state.numberOfDays}
                   </Text>
                 </View>
               </View>
@@ -120,7 +131,7 @@ class HomeScreen extends React.Component {
                   paddingTop: 45
                 }}
               >
-              {this.state.reminders.name}
+                {this.state.name}
               </Text>
               <Text
                 style={{
@@ -133,15 +144,6 @@ class HomeScreen extends React.Component {
               </Text>
             </View>
           </View>
-          {/* <View style={styles.app__cards} />
-          <View style={styles.app__cards} />
-          <View style={styles.app__cards} />
-          <View style={styles.app__cards} />
-          <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-          >
-            <Text>Home Screen</Text>
-          </View> */}
         </ScrollView>
       </View>
     );
