@@ -21,12 +21,28 @@ class DetailsScreen extends React.Component {
       morning: false,
       afternoon: false,
       night: false,
-      numberOfDays: 1
+      numberOfDays: 1,
+      id:0,
     };
   }
 
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
+
+
+    AsyncStorage.getAllKeys((err, keys) => {
+        console.log(keys.length);
+    });
+    
+
+    AsyncStorage.getItem("Data", (err, oldData) => {
+      data = JSON.parse(oldData);
+      numberOfKeys = Object.keys(data);
+      console.log("Keys" + numberOfKeys);
+      newKey = "X" + numberOfKeys.length;
+      this.setState({id: newKey})
+
+    });
 
     let reminder1 = {
       reminders: {
@@ -37,8 +53,10 @@ class DetailsScreen extends React.Component {
         numberOfDays: this.state.numberOfDays
       }
     };
+
+    const newId = this.state.id;
     let reminder2 = {
-      2: {
+      newId: {
         name: this.state.name,
         morning: this.state.morning,
         afternoon: this.state.afternoon,
@@ -47,21 +65,13 @@ class DetailsScreen extends React.Component {
       }
     };
 
-
-
-    AsyncStorage.getItem("Data", (err, result) => {
-      const data1 = JSON.parse(result)
-      console.log("new data" + data1);
-    });
-
-
-      AsyncStorage.setItem("Data", JSON.stringify(reminder1), () => {
         AsyncStorage.mergeItem("Data", JSON.stringify(reminder2), () => {
           AsyncStorage.getItem("Data", (err, result) => {
             console.log("add" + result);
-          });
-        });
+            const dataNew = JSON.parse(result);
+            console.log("json" + dataNew.reminders);
       });
+    });
 
     this.props.navigation.navigate("Home");
   }
