@@ -8,6 +8,7 @@ import {
   AsyncStorage,
   StyleSheet
 } from "react-native";
+import Card from "./card";
 
 class LogoTitle extends React.Component {
   render() {
@@ -94,56 +95,8 @@ class HomeScreen extends React.Component {
           </View>
         </View>
         <ScrollView style={styles.app__body}>
-          <View style={styles.app__cards}>
-            <View style={styles.app__cardLeft}>
-              <View style={styles.app__cardLeftCircle}>
-                <View style={styles.circleContainer}>
-                  <Text
-                    style={{
-                      color: "#6C6C6C",
-                      fontWeight: "bold",
-                      fontSize: 60
-                    }}
-                  >
-                    {this.state.numberOfDays}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.app__cardLeftText}>
-                <Text
-                  style={{
-                    color: "#fff",
-                    paddingLeft: 10,
-                    fontSize: 15,
-                    paddingTop: 45
-                  }}
-                >
-                  More days to go
-                </Text>
-              </View>
-            </View>
-            <View style={styles.app__cardRight}>
-              <Text
-                style={{
-                  color: "#FAFA32",
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  paddingTop: 45
-                }}
-              >
-                {this.state.name}
-              </Text>
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 20,
-                  paddingBottom: 20
-                }}
-              >
-                Morning | Evening | Night
-              </Text>
-            </View>
-          </View>
+          <Card name={this.state.name} numberOfDays={parseInt(this.state.numberOfDays)}         />
+
         </ScrollView>
       </View>
     );
