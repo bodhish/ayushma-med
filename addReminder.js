@@ -27,33 +27,42 @@ class DetailsScreen extends React.Component {
 
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
-    
+
     let reminder1 = {
-      reminders:{
-      name: this.state.name,
-      morning: this.state.morning,
-      afternoon: this.state.afternoon,
-      night: this.state.night,
-      numberOfDays: this.state.numberOfDays}
+      reminders: {
+        name: this.state.name,
+        morning: this.state.morning,
+        afternoon: this.state.afternoon,
+        night: this.state.night,
+        numberOfDays: this.state.numberOfDays
+      }
     };
-    // You only need to define what will be added or updated
-    // let UID123_delta = {
-    //   age: 31,
-    //   traits: { eyes: "blue", shoe_size: 10 }
-    // };
+    let reminder2 = {
+      2: {
+        name: this.state.name,
+        morning: this.state.morning,
+        afternoon: this.state.afternoon,
+        night: this.state.night,
+        numberOfDays: 1
+      }
+    };
 
-    const data = AsyncStorage.getItem("Data", (err, result) => {
-      return JSON.parse(result);
+
+
+    AsyncStorage.getItem("Data", (err, result) => {
+      const data1 = JSON.parse(result)
+      console.log("new data" + data1);
     });
-    console.log("data" + data)
 
-    AsyncStorage.setItem("Data", JSON.stringify(reminder1), () => {
-      AsyncStorage.mergeItem("Data", JSON.stringify(reminder1), () => {
-        AsyncStorage.getItem("Data", (err, result) => {
-          console.log("add" + result);
+
+      AsyncStorage.setItem("Data", JSON.stringify(reminder1), () => {
+        AsyncStorage.mergeItem("Data", JSON.stringify(reminder2), () => {
+          AsyncStorage.getItem("Data", (err, result) => {
+            console.log("add" + result);
+          });
         });
       });
-    });
+
     this.props.navigation.navigate("Home");
   }
   render() {
