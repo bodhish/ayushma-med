@@ -50,7 +50,7 @@ class DetailsScreen extends React.Component {
             console.log("json" + dataNew.reminders);
       });
     });
-
+    this.props.navigation.state.params.getData();
     this.props.navigation.navigate("Home");
   }
   render() {

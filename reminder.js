@@ -59,7 +59,9 @@ class HomeScreen extends React.Component {
 
   addNewReminder(event) {
     event.preventDefault();
-    this.props.navigation.navigate("AddReminder");
+    this.props.navigation.navigate("AddReminder", {
+      getData: this.getData.bind(this)
+    });
     this.componentDidMount();
   }
 
