@@ -39,7 +39,11 @@ class HomeScreen extends React.Component {
   };
 
   componentDidMount = () => {
-    const data1 = AsyncStorage.getItem("0", (err, result) => {
+    this.getData();
+  };
+
+  getData() {
+    AsyncStorage.getItem("0", (err, result) => {
       console.log("result" + result);
       data = JSON.parse(result);
       this.setState({
@@ -51,7 +55,7 @@ class HomeScreen extends React.Component {
       });
       console.log(data.morning);
     });
-  };
+  }
 
   addNewReminder(event) {
     event.preventDefault();
@@ -95,8 +99,10 @@ class HomeScreen extends React.Component {
           </View>
         </View>
         <ScrollView style={styles.app__body}>
-          <Card name={this.state.name} numberOfDays={parseInt(this.state.numberOfDays)}         />
-
+          <Card
+            name={this.state.name}
+            numberOfDays={parseInt(this.state.numberOfDays)}
+          />
         </ScrollView>
       </View>
     );
