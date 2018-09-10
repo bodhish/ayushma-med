@@ -29,7 +29,8 @@ class HomeScreen extends React.Component {
       morning: false,
       afternoon: false,
       night: false,
-      numberOfDays: 1
+      numberOfDays: 1,
+      reminders: {}
     };
   }
 
@@ -43,6 +44,23 @@ class HomeScreen extends React.Component {
   };
 
   getData() {
+      AsyncStorage.getAllKeys((err, keys) => {
+        AsyncStorage.multiGet(keys, (err, data) => {
+          this.setState({ reminders: data });
+          data.map((result, i, store) => {
+            let key = store[i][0];
+            let value = store[i][1];
+            console.log("Key:  " + key);
+            console.log("Value:  " + value);
+            this.setState({ reminders: {value} });
+          });
+        });
+      });
+    
+    console.log("rem" + this.state.reminders);
+    this.state.reminders.map((value) => {
+      console.log("Value   :   " + value.name);
+    });
     AsyncStorage.getItem("0", (err, result) => {
       console.log("result" + result);
       data = JSON.parse(result);
@@ -65,7 +83,17 @@ class HomeScreen extends React.Component {
     this.componentDidMount();
   }
 
+  reminderCards() {
+    this.state.reminders.map((result, i, store) => {
+      let key = store[i][0];
+      let value = store[i][1];
+      console.log("Key:  " + key);
+      console.log("Value:  " + value);
+    });
+  }
+
   render() {
+    const reminderData = this.state.reminders;
     return (
       <View style={styles.app__root}>
         <View style={styles.app__header}>
@@ -101,10 +129,13 @@ class HomeScreen extends React.Component {
           </View>
         </View>
         <ScrollView style={styles.app__body}>
-          <Card
-            name={this.state.name}
-            numberOfDays={parseInt(this.state.numberOfDays)}
-          />
+          {/* {reminderData.map((result, i, store) => {
+            let value = store[i][1];
+            <Card
+              name={value.name}
+              numberOfDays={parseInt(value.numberOfDays)}
+            />;
+          })} */}
         </ScrollView>
       </View>
     );

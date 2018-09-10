@@ -22,7 +22,7 @@ class DetailsScreen extends React.Component {
       afternoon: false,
       night: false,
       numberOfDays: 1,
-      id:0,
+      id:1,
     };
   }
 
