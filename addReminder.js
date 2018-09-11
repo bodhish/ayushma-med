@@ -12,7 +12,6 @@ import {
   AsyncStorage,
   StyleSheet
 } from "react-native";
-import FontAwesome, { Icons } from "react-native-fontawesome";
 
 class DetailsScreen extends React.Component {
   constructor(props) {
@@ -96,7 +95,7 @@ class DetailsScreen extends React.Component {
                             : styles.addReminder__morning
                         }
                       >
-                        <FontAwesome>{Icons.chevronLeft}</FontAwesome>
+                        &#xf185;
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -116,7 +115,7 @@ class DetailsScreen extends React.Component {
                             : styles.addReminder__afternoon
                         }
                       >
-                        ◉
+                        &#xf111;
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -136,7 +135,7 @@ class DetailsScreen extends React.Component {
                             : styles.addReminder__night
                         }
                       >
-                        ☾
+                        &#xf186;
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -146,9 +145,15 @@ class DetailsScreen extends React.Component {
               <View style={styles.addReminder__cardRight}>
                 <View style={styles.addReminder__cardRightCircle}>
                   <TouchableOpacity style={styles.circleContainer}>
-                    <FontAwesome style={{ fontSize: 32 }}>
-                      {Icons.chevronLeft}
-                    </FontAwesome>
+                    <Text
+                      style={{
+                        color: "#6C6C6C",
+                        fontWeight: "bold",
+                        fontSize: 60
+                      }}
+                    >
+                      {this.state.numberOfDays}
+                    </Text>
                     <Picker
                       style={{
                         position: "absolute",
@@ -160,6 +165,7 @@ class DetailsScreen extends React.Component {
                         this.setState({ numberOfDays: itemValue })
                       }
                     >
+                      <Picker.Item label="Select Number of Days" value="0" />
                       <Picker.Item label="1 day" value="1" />
                       <Picker.Item label="2 days" value="2" />
                       <Picker.Item label="3 days" value="3" />
@@ -276,36 +282,40 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   addReminder__morning: {
+    fontFamily: "FontAwesome",
     fontSize: 40,
     color: "#6C6C6C",
-    paddingBottom: 12
+    paddingBottom: 10
   },
   addReminder__morningTrue: {
     fontSize: 40,
+    fontFamily: "FontAwesome",
     color: "#108D23",
-    paddingBottom: 12
+    paddingBottom: 10
   },
   addReminder__afternoon: {
-    fontSize: 60,
+    fontFamily: "FontAwesome",
+    fontSize: 40,
     color: "#6C6C6C",
     paddingBottom: 10
   },
   addReminder__afternoonTrue: {
-    fontSize: 60,
+    fontFamily: "FontAwesome",
+    fontSize: 40,
     color: "#108D23",
     paddingBottom: 10
   },
   addReminder__night: {
+    fontFamily: "FontAwesome",
     fontSize: 40,
     color: "#6C6C6C",
-    paddingRight: 5,
-    transform: [{ rotate: "-30deg" }]
+    paddingBottom: 10
   },
   addReminder__nightTrue: {
+    fontFamily: "FontAwesome",
     fontSize: 40,
     color: "#108D23",
-    paddingRight: 5,
-    transform: [{ rotate: "-30deg" }]
+    paddingBottom: 10
   }
 });
 module.exports = DetailsScreen;
