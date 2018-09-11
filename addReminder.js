@@ -22,34 +22,37 @@ class DetailsScreen extends React.Component {
       afternoon: false,
       night: false,
       numberOfDays: 1,
-      id:1,
+      id: 1
     };
   }
+
+  componentDidMount = () => {
+    AsyncStorage.getAllKeys((err, keys) => {
+      newKey = keys.length + 1;
+      this.setState({ id: newKey });
+      console.log(newKey);
+    });
+  };
 
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
 
-
-    // AsyncStorage.getAllKeys((err, keys) => {
-    //   newKey = keys.length+1
-    //     console.log(newKey);
-    //     this.setState({id: newKey})
-    // });
-    
-    let reminder= {
-        name: this.state.name,
-        morning: this.state.morning,
-        afternoon: this.state.afternoon,
-        night: this.state.night,
-        numberOfDays: this.state.numberOfDays
+    let reminder = {
+      name: this.state.name,
+      morning: this.state.morning,
+      afternoon: this.state.afternoon,
+      night: this.state.night,
+      numberOfDays: this.state.numberOfDays
     };
-        AsyncStorage.setItem(JSON.stringify(this.state.id), JSON.stringify(reminder), () => {
-          AsyncStorage.getItem(JSON.stringify(this.state.id), (err, result) => {
-            console.log("add" + result);
-            const dataNew = JSON.parse(result);
-            console.log("json" + dataNew.reminders);
-      });
-    });
+    AsyncStorage.setItem(
+      JSON.stringify(this.state.id),
+      JSON.stringify(reminder),
+      () => {
+        AsyncStorage.getItem(JSON.stringify(this.state.id), (err, result) => {
+          console.log("add" + result);
+        });
+      }
+    );
     this.props.navigation.state.params.getData();
     this.props.navigation.navigate("Home");
   }

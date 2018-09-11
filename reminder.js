@@ -35,7 +35,6 @@ class HomeScreen extends React.Component {
   }
 
   static navigationOptions = {
-    // headerTitle instead of title
     headerTitle: <LogoTitle />
   };
 
