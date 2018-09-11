@@ -3,77 +3,95 @@ import {
   View,
   TouchableOpacity,
   AsyncStorage,
+  ToastAndroid,
   Text,
   StyleSheet
 } from "react-native";
 import PropTypes from "prop-types";
+import GestureRecognizer, {
+  swipeDirections
+} from "react-native-swipe-gestures";
 
 class Card extends React.Component {
   removeData(id) {
-    console.log(id);
-    // AsyncStorage.removeItem(this.props.id, err => {});
-    // this.props.getData();
+    ToastAndroid.show(
+      "Swipe Right to Delete the Reminder)",
+      ToastAndroid.SHORT
+    );
+  }
 
-    this.props.showPopup(id);
+  onSwipeRight(id) {
+    ToastAndroid.show("Swipe again to Delete", ToastAndroid.SHORT);
+    AsyncStorage.removeItem(this.props.id, err => {});
+    this.props.getData();
   }
   render() {
+    const config = {
+      velocityThreshold: 0.1,
+      directionalOffsetThreshold: 50
+    };
     return (
-      <TouchableOpacity
-        onPress={() => {
-          this.removeData(this.props.id);
-        }}
+      <GestureRecognizer
+        onSwipeRight={() => this.onSwipeRight(this.props.id)}
+        config={config}
       >
-        <View style={styles.app__cards}>
-          <View style={styles.app__cardLeft}>
-            <View style={styles.app__cardLeftCircle}>
-              <View style={styles.circleContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            this.removeData(this.props.id);
+          }}
+        >
+          <View style={styles.app__cards}>
+            <View style={styles.app__cardLeft}>
+              <View style={styles.app__cardLeftCircle}>
+                <View style={styles.circleContainer}>
+                  <Text
+                    style={{
+                      color: "#6C6C6C",
+                      fontWeight: "bold",
+                      fontSize: 60
+                    }}
+                  >
+                    {this.props.numberOfDays}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.app__cardLeftText}>
                 <Text
                   style={{
-                    color: "#6C6C6C",
-                    fontWeight: "bold",
-                    fontSize: 60
+                    color: "#fff",
+                    paddingLeft: 10,
+                    fontSize: 15,
+                    paddingTop: 45
                   }}
                 >
-                  {this.props.numberOfDays}
+                  More days to go
                 </Text>
               </View>
             </View>
-            <View style={styles.app__cardLeftText}>
+            <View style={styles.app__cardRight}>
               <Text
                 style={{
-                  color: "#fff",
-                  paddingLeft: 10,
-                  fontSize: 15,
+                  color: "#FAFA32",
+                  fontSize: 20,
+                  fontWeight: "bold",
                   paddingTop: 45
                 }}
               >
-                More days to go
+                {this.props.name}
+              </Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 20,
+                  paddingBottom: 20
+                }}
+              >
+                Morning | Evening | Night
               </Text>
             </View>
           </View>
-          <View style={styles.app__cardRight}>
-            <Text
-              style={{
-                color: "#FAFA32",
-                fontSize: 20,
-                fontWeight: "bold",
-                paddingTop: 45
-              }}
-            >
-              {this.props.name}
-            </Text>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 20,
-                paddingBottom: 20
-              }}
-            >
-              Morning | Evening | Night
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </GestureRecognizer>
     );
   }
 }
