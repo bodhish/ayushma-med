@@ -44,6 +44,7 @@ class HomeScreen extends React.Component {
 
   getData() {
     AsyncStorage.getAllKeys((err, keys) => {
+      console.log("keys " + keys);
       AsyncStorage.multiGet(keys).then(data => {
         this.setState({ reminders: data });
         // data.map((result, i, store) => {
@@ -54,21 +55,6 @@ class HomeScreen extends React.Component {
         //   // this.setState({ reminders: {value} });
         // });
       });
-    });
-
-    console.log("my  :" + this.state.reminder);
-
-    AsyncStorage.getItem("0", (err, result) => {
-      console.log("result" + result);
-      data = JSON.parse(result);
-      this.setState({
-        name: data.name,
-        morning: data.morning,
-        afternoon: data.afternoon,
-        night: data.night,
-        numberOfDays: data.numberOfDays
-      });
-      console.log(data.morning);
     });
   }
 
@@ -123,11 +109,13 @@ class HomeScreen extends React.Component {
             return (
               <Card
                 key={key}
+                id={key}
                 name={value.name}
                 morning={value.morning}
                 afternoon={value.afternoon}
                 night={value.evening}
                 numberOfDays={parseInt(value.numberOfDays)}
+                getData={this.getData.bind(this)}
               />
             );
           })}
