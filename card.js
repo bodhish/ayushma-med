@@ -143,8 +143,7 @@ Card.propTypes = {
   night: PropTypes.bool,
   numberOfDays: PropTypes.number,
   id: PropTypes.string,
-  getData: PropTypes.func,
-  showPopup: PropTypes.func
+  getData: PropTypes.func
 };
 
 module.exports = Card;

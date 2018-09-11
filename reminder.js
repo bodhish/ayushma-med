@@ -9,7 +9,6 @@ import {
   StyleSheet
 } from "react-native";
 import Card from "./card";
-import PopupDialog from "react-native-popup-dialog";
 
 class LogoTitle extends React.Component {
   render() {
@@ -52,38 +51,18 @@ class HomeScreen extends React.Component {
     });
   }
 
-  showPopup(reminderID) {
-    console.log(reminderID);
-    this.popupDialog.show();
-  }
   addNewReminder(event) {
     event.preventDefault();
     this.props.navigation.navigate("AddReminder", {
       getData: this.getData.bind(this)
     });
-    this.componentDidMount();
+    this.getData();
   }
 
   render() {
     let reminderData = this.state.reminders;
     return (
       <View style={styles.app__root}>
-        <PopupDialog
-          width={0.95}
-          ref={popupDialog => {
-            this.popupDialog = popupDialog;
-          }}
-        >
-          <View style={styles.popupDialogBox}>
-            <View style={styles.popupDialogHeader}>
-              <Text>Reminder</Text>
-            </View>
-            <View style={styles.popupDialogBody}>
-              <Text>Body</Text>
-            </View>
-          </View>
-        </PopupDialog>
-
         <View style={styles.app__header}>
           <View style={styles.app__headerText}>
             <Text
@@ -130,7 +109,6 @@ class HomeScreen extends React.Component {
                 night={value.evening}
                 numberOfDays={parseInt(value.numberOfDays)}
                 getData={this.getData.bind(this)}
-                showPopup={this.showPopup.bind(this)}
               />
             );
           })}
@@ -175,20 +153,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignItems: "center",
     justifyContent: "center"
-  },
-  popupDialogBox: {
-    flexDirection: "column"
-  },
-  popupDialogHeader: {
-    flex: 1,
-    borderRadius: 20,
-    marginRight: 10,
-    marginTop: 10,
-    marginLeft: 10,
-
-    flexDirection: "column",
-    backgroundColor: "#16CB93",
-    height: 150
   }
 });
 
