@@ -8,21 +8,16 @@ import {
   StyleSheet
 } from "react-native";
 import PropTypes from "prop-types";
-import GestureRecognizer, {
-  swipeDirections
-} from "react-native-swipe-gestures";
+import GestureRecognizer from "react-native-swipe-gestures";
 
 class Card extends React.Component {
   removeData(id) {
-    ToastAndroid.show(
-      "Swipe Right to Delete the Reminder)",
-      ToastAndroid.SHORT
-    );
+    ToastAndroid.show("Swipe Right to Delete the Reminder", ToastAndroid.SHORT);
   }
 
   onSwipeRight(id) {
-    ToastAndroid.show("Swipe again to Delete", ToastAndroid.SHORT);
-    AsyncStorage.removeItem(this.props.id, err => {});
+    ToastAndroid.show("Deleted your Reminder", ToastAndroid.SHORT);
+    AsyncStorage.removeItem(id, err => {});
     this.props.getData();
   }
   render() {
