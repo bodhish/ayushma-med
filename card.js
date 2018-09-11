@@ -9,12 +9,18 @@ import {
 import PropTypes from "prop-types";
 
 class Card extends React.Component {
+  removeData(id) {
+    console.log(id);
+    // AsyncStorage.removeItem(this.props.id, err => {});
+    // this.props.getData();
+
+    this.props.showPopup();
+  }
   render() {
     return (
       <TouchableOpacity
         onPress={() => {
-          AsyncStorage.removeItem(this.props.id, err => {});
-          this.props.getData();
+          this.removeData(this.props.id);
         }}
       >
         <View style={styles.app__cards}>
@@ -124,7 +130,8 @@ Card.propTypes = {
   night: PropTypes.bool,
   numberOfDays: PropTypes.number,
   id: PropTypes.string,
-  getData: PropTypes.func
+  getData: PropTypes.func,
+  showPopup: PropTypes.func
 };
 
 module.exports = Card;

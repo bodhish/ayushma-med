@@ -9,6 +9,7 @@ import {
   StyleSheet
 } from "react-native";
 import Card from "./card";
+import PopupDialog from "react-native-popup-dialog";
 
 class LogoTitle extends React.Component {
   render() {
@@ -58,6 +59,9 @@ class HomeScreen extends React.Component {
     });
   }
 
+  showPopup(reminderID) {
+    this.popupDialog.show();
+  }
   addNewReminder(event) {
     event.preventDefault();
     this.props.navigation.navigate("AddReminder", {
@@ -70,6 +74,19 @@ class HomeScreen extends React.Component {
     let reminderData = this.state.reminders;
     return (
       <View style={styles.app__root}>
+        <PopupDialog
+          width={0.95}
+          ref={popupDialog => {
+            this.popupDialog = popupDialog;
+          }}
+        >
+          <View style={styles.popupDialogBox}>
+            <View style={styles.popupDialogHeader}>
+              <Text>Hello</Text>
+            </View>
+          </View>
+        </PopupDialog>
+
         <View style={styles.app__header}>
           <View style={styles.app__headerText}>
             <Text
@@ -116,6 +133,7 @@ class HomeScreen extends React.Component {
                 night={value.evening}
                 numberOfDays={parseInt(value.numberOfDays)}
                 getData={this.getData.bind(this)}
+                showPopup={this.showPopup.bind(this)}
               />
             );
           })}
@@ -156,6 +174,20 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 100,
+    marginLeft: 10,
+    marginRight: 10,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  popupDialogBox: {
+    backgroundColor: "#fff",
+    marginLeft: 10,
+    marginRight: 10
+  },
+  popupDialogHeader: {
+    backgroundColor: "#16CB93",
+    width: 80,
+    height: 80,
     marginLeft: 10,
     marginRight: 10,
     alignItems: "center",

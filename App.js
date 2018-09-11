@@ -7,10 +7,10 @@ import AddReminder from "./addReminder";
 const RootStack = createStackNavigator(
   {
     Home: Reminder,
-    AddReminder: AddReminder,
+    AddReminder: AddReminder
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: "Home"
   }
 );
 
