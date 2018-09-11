@@ -30,7 +30,7 @@ class HomeScreen extends React.Component {
       afternoon: false,
       night: false,
       numberOfDays: 1,
-      reminders: {}
+      reminders: []
     };
   }
 
@@ -44,23 +44,21 @@ class HomeScreen extends React.Component {
   };
 
   getData() {
-      AsyncStorage.getAllKeys((err, keys) => {
-        AsyncStorage.multiGet(keys, (err, data) => {
-          this.setState({ reminders: data });
-          data.map((result, i, store) => {
-            let key = store[i][0];
-            let value = store[i][1];
-            console.log("Key:  " + key);
-            console.log("Value:  " + value);
-            this.setState({ reminders: {value} });
-          });
-        });
+    AsyncStorage.getAllKeys((err, keys) => {
+      AsyncStorage.multiGet(keys).then(data => {
+        this.setState({ reminders: data });
+        // data.map((result, i, store) => {
+        //   let key = store[i][0];
+        //   let value = store[i][1];
+        //   console.log("Key:  " + key);
+        //   console.log("Value:  " + value);
+        //   // this.setState({ reminders: {value} });
+        // });
       });
-    
-    console.log("rem" + this.state.reminders);
-    this.state.reminders.map((value) => {
-      console.log("Value   :   " + value.name);
     });
+
+    console.log("my  :" + this.state.reminder);
+
     AsyncStorage.getItem("0", (err, result) => {
       console.log("result" + result);
       data = JSON.parse(result);
@@ -83,17 +81,8 @@ class HomeScreen extends React.Component {
     this.componentDidMount();
   }
 
-  reminderCards() {
-    this.state.reminders.map((result, i, store) => {
-      let key = store[i][0];
-      let value = store[i][1];
-      console.log("Key:  " + key);
-      console.log("Value:  " + value);
-    });
-  }
-
   render() {
-    const reminderData = this.state.reminders;
+    let reminderData = this.state.reminders;
     return (
       <View style={styles.app__root}>
         <View style={styles.app__header}>
@@ -129,13 +118,20 @@ class HomeScreen extends React.Component {
           </View>
         </View>
         <ScrollView style={styles.app__body}>
-          {/* {reminderData.map((result, i, store) => {
-            let value = store[i][1];
-            <Card
-              name={value.name}
-              numberOfDays={parseInt(value.numberOfDays)}
-            />;
-          })} */}
+          {reminderData.map((result, i, store) => {
+            key = store[i][0];
+            value = JSON.parse(store[i][1]);
+            return (
+              <Card
+                key={key}
+                name={value.name}
+                morning={value.morning}
+                afternoon={value.afternoon}
+                night={value.evening}
+                numberOfDays={parseInt(value.numberOfDays)}
+              />
+            );
+          })}
         </ScrollView>
       </View>
     );
