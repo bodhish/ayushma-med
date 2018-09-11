@@ -1,6 +1,5 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation";
-
 import Reminder from "./reminder";
 import AddReminder from "./addReminder";
 

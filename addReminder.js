@@ -146,15 +146,9 @@ class DetailsScreen extends React.Component {
               <View style={styles.addReminder__cardRight}>
                 <View style={styles.addReminder__cardRightCircle}>
                   <TouchableOpacity style={styles.circleContainer}>
-                    <Text
-                      style={{
-                        color: "#6C6C6C",
-                        fontWeight: "bold",
-                        fontSize: 60
-                      }}
-                    >
-                      {this.state.numberOfDays}
-                    </Text>
+                    <FontAwesome style={{ fontSize: 32 }}>
+                      {Icons.chevronLeft}
+                    </FontAwesome>
                     <Picker
                       style={{
                         position: "absolute",
@@ -223,9 +217,12 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   addReminder__cardLeft: {
-    flex: 2
+    backgroundColor: "#fff",
+    flex: 2,
+    paddingBottom: 20
   },
   addReminder__cardRight: {
+    borderRadius: 20,
     flex: 1,
     flexDirection: "column"
   },
