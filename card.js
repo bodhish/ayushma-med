@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet
-} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
 class Card extends React.Component {
-
   render() {
     return (
       <View style={styles.app__cards}>
@@ -65,45 +60,6 @@ class Card extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  app__root: {
-    flex: 1,
-    backgroundColor: "#fff"
-  },
-  app__header: {
-    flexDirection: "row",
-    backgroundColor: "#16CB93",
-    height: 150
-  },
-  app__headerText: {
-    flex: 3
-  },
-  app__HeaderCircleContainer: {
-    flex: 1,
-    marginTop: 15,
-    marginRight: 15,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  HeaderCircle: {
-    position: "absolute",
-    backgroundColor: "#fff",
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  app__body: {
-    flex: 4,
-    marginTop: 10,
-    flexDirection: "column",
-    backgroundColor: "#fff"
-  },
-  app__footer: {
-    flex: 1,
-    maxHeight: 80,
-    backgroundColor: "#27885f"
-  },
   app__cards: {
     flexDirection: "row",
     height: 150,
@@ -145,25 +101,15 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center"
-  },
-  app__button: {
-    backgroundColor: "#fff",
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: "center",
-    justifyContent: "center"
   }
 });
 
 Card.propTypes = {
-    name: PropTypes.string,
-    morning: PropTypes.bool,
-    afternoon: PropTypes.bool,
-    night: PropTypes.bool,
-    numberOfDays: PropTypes.number
-  };
+  name: PropTypes.string,
+  morning: PropTypes.bool,
+  afternoon: PropTypes.bool,
+  night: PropTypes.bool,
+  numberOfDays: PropTypes.number
+};
 
 module.exports = Card;

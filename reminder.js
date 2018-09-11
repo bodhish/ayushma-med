@@ -157,67 +157,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  HeaderCircle: {
-    position: "absolute",
-    backgroundColor: "#fff",
-    width: 80,
-    height: 80,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center"
-  },
   app__body: {
     flex: 4,
     marginTop: 10,
     flexDirection: "column",
     backgroundColor: "#fff"
-  },
-  app__footer: {
-    flex: 1,
-    maxHeight: 80,
-    backgroundColor: "#27885f"
-  },
-  app__cards: {
-    flexDirection: "row",
-    height: 150,
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 10,
-    marginBottom: 10,
-    backgroundColor: "#16CB93",
-    maxHeight: 200,
-    borderColor: "#fff",
-    borderWidth: 0,
-    borderRadius: 20
-  },
-  app__cardRight: {
-    flex: 2
-  },
-  app__cardLeft: {
-    flex: 1,
-    flexDirection: "column"
-  },
-  app__cardLeftText: {
-    flex: 1,
-    marginBottom: 15,
-    paddingBottom: 10,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  app__cardLeftCircle: {
-    flex: 1,
-    marginTop: 40,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  circleContainer: {
-    position: "absolute",
-    backgroundColor: "#fff",
-    width: 90,
-    height: 90,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center"
   },
   app__button: {
     backgroundColor: "#fff",
