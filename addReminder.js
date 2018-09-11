@@ -12,6 +12,7 @@ import {
   AsyncStorage,
   StyleSheet
 } from "react-native";
+import FontAwesome, { Icons } from "react-native-fontawesome";
 
 class DetailsScreen extends React.Component {
   constructor(props) {
@@ -95,7 +96,7 @@ class DetailsScreen extends React.Component {
                             : styles.addReminder__morning
                         }
                       >
-                        ☼
+                        <FontAwesome>{Icons.chevronLeft}</FontAwesome>
                       </Text>
                     </TouchableOpacity>
                   </View>

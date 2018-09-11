@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
+import FontAwesome, { Icons } from "react-native-fontawesome";
 
 class Card extends React.Component {
   removeData(id) {
