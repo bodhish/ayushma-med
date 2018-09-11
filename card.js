@@ -14,7 +14,7 @@ class Card extends React.Component {
     // AsyncStorage.removeItem(this.props.id, err => {});
     // this.props.getData();
 
-    this.props.showPopup();
+    this.props.showPopup(id);
   }
   render() {
     return (

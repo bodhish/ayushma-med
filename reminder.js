@@ -48,18 +48,12 @@ class HomeScreen extends React.Component {
       console.log("keys " + keys);
       AsyncStorage.multiGet(keys).then(data => {
         this.setState({ reminders: data });
-        // data.map((result, i, store) => {
-        //   let key = store[i][0];
-        //   let value = store[i][1];
-        //   console.log("Key:  " + key);
-        //   console.log("Value:  " + value);
-        //   // this.setState({ reminders: {value} });
-        // });
       });
     });
   }
 
   showPopup(reminderID) {
+    console.log(reminderID);
     this.popupDialog.show();
   }
   addNewReminder(event) {
@@ -82,7 +76,10 @@ class HomeScreen extends React.Component {
         >
           <View style={styles.popupDialogBox}>
             <View style={styles.popupDialogHeader}>
-              <Text>Hello</Text>
+              <Text>Reminder</Text>
+            </View>
+            <View style={styles.popupDialogBody}>
+              <Text>Body</Text>
             </View>
           </View>
         </PopupDialog>
@@ -180,18 +177,18 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   popupDialogBox: {
-    backgroundColor: "#fff",
-    marginLeft: 10,
-    marginRight: 10
+    flexDirection: "column"
   },
   popupDialogHeader: {
-    backgroundColor: "#16CB93",
-    width: 80,
-    height: 80,
-    marginLeft: 10,
+    flex: 1,
+    borderRadius: 20,
     marginRight: 10,
-    alignItems: "center",
-    justifyContent: "center"
+    marginTop: 10,
+    marginLeft: 10,
+
+    flexDirection: "column",
+    backgroundColor: "#16CB93",
+    height: 150
   }
 });
 
