@@ -10,8 +10,16 @@ import {
 import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
 
+import AndroidAlarms from "react-native-android-alarms";
+
 class Card extends React.Component {
   removeData(id) {
+    console.log("date: ");
+    let date = new Date(Date.now() + 10 * 1000);
+    console.log(date);
+    let newDate = new Date(Date.now() + 100 * 1000);
+    console.log(newDate.valueOf());
+    AndroidAlarms.setAlarm(12345, date.valueOf(), false);
     ToastAndroid.show("Swipe Right to Delete the Reminder", ToastAndroid.SHORT);
   }
 

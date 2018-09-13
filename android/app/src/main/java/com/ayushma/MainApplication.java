@@ -2,6 +2,8 @@ package com.ayushma;
 
 import android.app.Application;
 
+import com.dawnchorus.alarms.AlarmPackage;
+
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -21,9 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
-      );
+      return Arrays.<ReactPackage>asList(new MainReactPackage(), new AlarmPackage());
     }
 
     @Override
