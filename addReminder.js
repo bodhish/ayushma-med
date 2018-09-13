@@ -21,7 +21,7 @@ class DetailsScreen extends React.Component {
       morning: false,
       afternoon: false,
       night: false,
-      numberOfDays: 1,
+      numberOfDays: 0,
       id: 1
     };
   }
@@ -164,7 +164,10 @@ class DetailsScreen extends React.Component {
                         this.setState({ numberOfDays: itemValue })
                       }
                     >
-                      <Picker.Item label="Select Number of Days" value="0" />
+                      <Picker.Item
+                        label="Select Number of Days"
+                        value={this.state.numberOfDays}
+                      />
                       <Picker.Item label="1 day" value="1" />
                       <Picker.Item label="2 days" value="2" />
                       <Picker.Item label="3 days" value="3" />
