@@ -6,18 +6,18 @@
                 "to": {
                     "startLine": 2,
                     "startColumn": 4,
-                    "startOffset": 55,
+                    "startOffset": 105,
                     "endColumn": 120,
-                    "endOffset": 171
+                    "endOffset": 221
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 280,
+                        "startOffset": 105,
                         "endColumn": 120,
-                        "endOffset": 396
+                        "endOffset": 221
                     }
                 }
             },
@@ -25,18 +25,18 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 176,
-                    "endColumn": 107,
-                    "endOffset": 279
+                    "startOffset": 226,
+                    "endColumn": 103,
+                    "endOffset": 325
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 401,
-                        "endColumn": 107,
-                        "endOffset": 504
+                        "startOffset": 226,
+                        "endColumn": 103,
+                        "endOffset": 325
                     }
                 }
             },
@@ -44,18 +44,18 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 284,
-                    "endColumn": 122,
-                    "endOffset": 402
+                    "startOffset": 330,
+                    "endColumn": 112,
+                    "endOffset": 438
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 509,
-                        "endColumn": 122,
-                        "endOffset": 627
+                        "startOffset": 330,
+                        "endColumn": 112,
+                        "endOffset": 438
                     }
                 }
             },
@@ -63,18 +63,18 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 407,
-                    "endColumn": 103,
-                    "endOffset": 506
+                    "startOffset": 443,
+                    "endColumn": 87,
+                    "endOffset": 526
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 632,
-                        "endColumn": 103,
-                        "endOffset": 731
+                        "startOffset": 443,
+                        "endColumn": 87,
+                        "endOffset": 526
                     }
                 }
             },
@@ -82,18 +82,18 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 511,
-                    "endColumn": 112,
-                    "endOffset": 619
+                    "startOffset": 531,
+                    "endColumn": 111,
+                    "endOffset": 638
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 736,
-                        "endColumn": 112,
-                        "endOffset": 844
+                        "startOffset": 531,
+                        "endColumn": 111,
+                        "endOffset": 638
                     }
                 }
             },
@@ -101,18 +101,18 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 624,
-                    "endColumn": 87,
-                    "endOffset": 707
+                    "startOffset": 643,
+                    "endColumn": 120,
+                    "endOffset": 759
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 849,
-                        "endColumn": 87,
-                        "endOffset": 932
+                        "startOffset": 643,
+                        "endColumn": 120,
+                        "endOffset": 759
                     }
                 }
             },
@@ -120,18 +120,18 @@
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 712,
-                    "endColumn": 111,
-                    "endOffset": 819
+                    "startOffset": 764,
+                    "endColumn": 84,
+                    "endOffset": 844
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 937,
-                        "endColumn": 111,
-                        "endOffset": 1044
+                        "startOffset": 764,
+                        "endColumn": 84,
+                        "endOffset": 844
                     }
                 }
             },
@@ -139,18 +139,18 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 824,
-                    "endColumn": 120,
-                    "endOffset": 940
+                    "startOffset": 849,
+                    "endColumn": 80,
+                    "endOffset": 925
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 1049,
-                        "endColumn": 120,
-                        "endOffset": 1165
+                        "startOffset": 849,
+                        "endColumn": 80,
+                        "endOffset": 925
                     }
                 }
             },
@@ -158,18 +158,18 @@
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 945,
+                    "startOffset": 930,
                     "endColumn": 82,
-                    "endOffset": 1023
+                    "endOffset": 1008
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 1170,
+                        "startOffset": 930,
                         "endColumn": 82,
-                        "endOffset": 1248
+                        "endOffset": 1008
                     }
                 }
             },
@@ -177,18 +177,18 @@
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1028,
+                    "startOffset": 1013,
                     "endColumn": 111,
-                    "endOffset": 1135
+                    "endOffset": 1120
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1253,
+                        "startOffset": 1013,
                         "endColumn": 111,
-                        "endOffset": 1360
+                        "endOffset": 1120
                     }
                 }
             },
@@ -196,18 +196,18 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1140,
+                    "startOffset": 1125,
                     "endColumn": 112,
-                    "endOffset": 1248
+                    "endOffset": 1233
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 1365,
+                        "startOffset": 1125,
                         "endColumn": 112,
-                        "endOffset": 1473
+                        "endOffset": 1233
                     }
                 }
             },
@@ -215,18 +215,18 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1253,
+                    "startOffset": 1238,
                     "endColumn": 99,
-                    "endOffset": 1348
+                    "endOffset": 1333
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1478,
+                        "startOffset": 1238,
                         "endColumn": 99,
-                        "endOffset": 1573
+                        "endOffset": 1333
                     }
                 }
             },
@@ -234,18 +234,18 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1353,
+                    "startOffset": 1338,
                     "endColumn": 113,
-                    "endOffset": 1462
+                    "endOffset": 1447
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1578,
+                        "startOffset": 1338,
                         "endColumn": 113,
-                        "endOffset": 1687
+                        "endOffset": 1447
                     }
                 }
             },
@@ -253,18 +253,18 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 1467,
+                    "startOffset": 1452,
                     "endColumn": 104,
-                    "endOffset": 1567
+                    "endOffset": 1552
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1692,
+                        "startOffset": 1452,
                         "endColumn": 104,
-                        "endOffset": 1792
+                        "endOffset": 1552
                     }
                 }
             },
@@ -272,18 +272,18 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 1572,
+                    "startOffset": 1557,
                     "endColumn": 105,
-                    "endOffset": 1673
+                    "endOffset": 1658
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 1797,
+                        "startOffset": 1557,
                         "endColumn": 105,
-                        "endOffset": 1898
+                        "endOffset": 1658
                     }
                 }
             },
@@ -291,18 +291,18 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1678,
-                    "endColumn": 120,
-                    "endOffset": 1794
+                    "startOffset": 1663,
+                    "endColumn": 163,
+                    "endOffset": 1822
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1903,
-                        "endColumn": 120,
-                        "endOffset": 2019
+                        "startOffset": 1663,
+                        "endColumn": 163,
+                        "endOffset": 1822
                     }
                 }
             },
@@ -310,18 +310,18 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1799,
+                    "startOffset": 1827,
                     "endColumn": 102,
-                    "endOffset": 1897
+                    "endOffset": 1925
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 2024,
+                        "startOffset": 1827,
                         "endColumn": 102,
-                        "endOffset": 2122
+                        "endOffset": 1925
                     }
                 }
             },
@@ -329,18 +329,37 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1902,
-                    "endColumn": 100,
-                    "endOffset": 1998
+                    "startOffset": 1930,
+                    "endColumn": 82,
+                    "endOffset": 2008
                 },
                 "from": {
-                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ro/values-ro.xml",
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 2127,
+                        "startOffset": 1930,
+                        "endColumn": 82,
+                        "endOffset": 2008
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2013,
+                    "endColumn": 100,
+                    "endOffset": 2109
+                },
+                "from": {
+                    "file": "/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.1.1/res/values-ro/values-ro.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
                         "endColumn": 100,
-                        "endOffset": 2223
+                        "endOffset": 151
                     }
                 }
             }

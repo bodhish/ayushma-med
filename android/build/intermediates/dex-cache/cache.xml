@@ -12,30 +12,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9356ce561cb27ab0f153f4117fe7a8bd87c3fd57.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
         <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_77c81789e5baa71f1e6c3c52d170b1db0e5b8d21.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_ed45c78c83cb66ed25fc0aefdb530cf1e0f85f8c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,12 +30,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/android.arch.lifecycle/livedata-core/1.1.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_84f2c443f8b8974ac1f4a3f5138c3ed8e9fd31e2.jar" />
+        revision="27.0.3"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/android.arch.lifecycle-livedata-core-1.1.0_b66eff8c0da33ad18784cbf393f05066866e0034.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d968b9bd0011800e0d333d1571b8d34bcb8a0b6e">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-27.1.1_5b1d944ebe97083798150aa8def281c2f4a368f7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -66,21 +57,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_28869f1ce8c325e178630eaca5086b252db8cb19.jar" />
+        revision="27.0.3"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_c2faa794d264bed11c2df7710c1e131efcff61ee.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_62f3741c01a6214ec70857ff208eaf94d740ccaf.jar" />
+        revision="27.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_b7492b99caed8a086263c93431d8f6d0c0a1737f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,12 +84,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.1.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_567cdc666ec5cfbfbe6c047bba7be2100beba2fa.jar" />
+        revision="27.0.3"
+        sha1="23dcb4803d3103bde3f3f5db978a726338fe49ae">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-27.1.1_30b27ade94366ea542dc7c2ec2b811466b241a35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.0/edf3f7bfb84a7521d0599efa3b0113a0ee90f85/common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_773c66fb0493a2795f15c2d20cda1a5a1275ae2a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,6 +111,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_df773c3f28df6910bf3f4705173474699547483d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/android.arch.core/runtime/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/android.arch.core-runtime-1.1.0_e7df15511cd47483e722cb0a185153f252080eb7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
@@ -120,21 +138,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_7204cdf5614c59d193feb8c9de6b569bd4a0c002.jar" />
+        revision="27.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_27e0b0dd3c6058da7dedc5e273679f63d723b5b0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_abf1a653c1e7cc3138a83254f6b2b22b57245904.jar" />
+        revision="27.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9356ce561cb27ab0f153f4117fe7a8bd87c3fd57.jar" />
     </item>
     <item
         is-multidex="false"
@@ -147,12 +165,228 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/android.arch.lifecycle/viewmodel/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/android.arch.lifecycle-viewmodel-1.1.0_ff667958c6c37a749a8f1e3a789620ef47adf690.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="874f1143c11f5d38533efe512bf913e3e847e7df">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-27.1.1_d104c06910ed0a98735a205957eb328446c91c43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_9f8f3cd475606494bca6f94e3839bc0686033279.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_b7492b99caed8a086263c93431d8f6d0c0a1737f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ec657bb192b20229696216bf233779b16bf75a54">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-27.1.1_4404f1994140f2f44e7d5071b5f8eefbf8c21b63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_c2faa794d264bed11c2df7710c1e131efcff61ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_7204cdf5614c59d193feb8c9de6b569bd4a0c002.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9356ce561cb27ab0f153f4117fe7a8bd87c3fd57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c9a721adcd7dbae7a197b0ef81102336539f63ff">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-27.1.1_c3eb1044d1d83a67efc08de41d2651eae46a8c28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.1/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.1_fe5c3ca53b6f9d98ee5eec68295d0802a19bed99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_62f3741c01a6214ec70857ff208eaf94d740ccaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2feadd535770271ca57b7b431f42151aa4af324a">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-27.1.1_0da8eff8efa2bd249f404ff7548c66bcc8d24ebc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_c601076f651a9515b389fb23e6dcadabc64e1513.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_3d1c1ba0a284708ab3a05e2a889c73de4c6c470f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_d3ac50ff1749c5c5eafd76e8975bf50f00f7e660.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_62f3741c01a6214ec70857ff208eaf94d740ccaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_7204cdf5614c59d193feb8c9de6b569bd4a0c002.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.55.4_43b64a8192f6b105acf7c2f4a763f9b0cfd3fe30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_abf1a653c1e7cc3138a83254f6b2b22b57245904.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_77c81789e5baa71f1e6c3c52d170b1db0e5b8d21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_b55ac8650eb71088450b30b31f4c67be273ad9d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_abf1a653c1e7cc3138a83254f6b2b22b57245904.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_1c5d07b3d68d3082632325386b6cbe989710405d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_7fca32f5b991f056bbfc99061e223b8d6cdabdc0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/android.arch.lifecycle/runtime/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/android.arch.lifecycle-runtime-1.1.0_339dc90d4ae7975bb14e365da5f5c92c2f757572.jar" />
     </item>
     <item
         is-multidex="false"
@@ -165,6 +399,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/27.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3304d33470ff64cf83bce9189ff3648a42eb2aa7">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-27.1.1_42c04fd81af14996ee3d51f3757ca09ba302829d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -174,12 +417,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jar="/Users/bodhi/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.0/8007981f7d7540d89cd18471b8e5dcd2b4f99167/common-1.1.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_c2faa794d264bed11c2df7710c1e131efcff61ee.jar" />
+        revision="27.0.3"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_d0d163a5996915ab0c8193354cbdc40474972b41.jar" />
     </item>
     <item
         is-multidex="false"
