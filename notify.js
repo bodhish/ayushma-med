@@ -5,6 +5,7 @@ import {
   AsyncStorage,
   ToastAndroid,
   Text,
+  BackAndroid,
   StyleSheet
 } from "react-native";
 import PropTypes from "prop-types";
@@ -12,15 +13,15 @@ import GestureRecognizer from "react-native-swipe-gestures";
 
 class Notify extends React.Component {
   // TO DO: Setup Sound, Vibration< Display Alarm Details
-  navigation() {
-    this.props.navigation.navigate("Home");
+  exitApp() {
+    BackAndroid.exitApp();
   }
   render() {
     console.log(this.props.newId);
 
     return (
       <View>
-        <TouchableOpacity onPress={this.navigation.bind(this)}>
+        <TouchableOpacity onPress={this.exitApp.bind(this)}>
           <View style={styles.app__cards}>
             <Text>{this.props.alarmID}</Text>
           </View>
