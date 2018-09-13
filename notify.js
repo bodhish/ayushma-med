@@ -5,7 +5,7 @@ import {
   AsyncStorage,
   ToastAndroid,
   Text,
-  BackAndroid,
+  BackHandler,
   StyleSheet
 } from "react-native";
 import PropTypes from "prop-types";
@@ -13,15 +13,29 @@ import GestureRecognizer from "react-native-swipe-gestures";
 
 class Notify extends React.Component {
   // TO DO: Setup Sound, Vibration< Display Alarm Details
-  exitApp() {
-    BackAndroid.exitApp();
+  componentWillMount() {
+    BackHandler.addEventListener(
+      "hardwareBackPress",
+      this.handleBackButtonClick
+    );
   }
+  componentWillUnmount() {
+    BackHandler.removeEventListener(
+      "hardwareBackPress",
+      this.handleBackButtonClick
+    );
+  }
+  handleBackButtonClick() {
+    BackHandler.exitApp();
+    return true;
+  }
+
   render() {
     console.log(this.props.newId);
 
     return (
       <View>
-        <TouchableOpacity onPress={this.exitApp.bind(this)}>
+        <TouchableOpacity onPress={this.handleBackButtonClick.bind(this)}>
           <View style={styles.app__cards}>
             <Text>{this.props.alarmID}</Text>
           </View>
