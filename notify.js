@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
 
 class Notify extends React.Component {
+  // TO DO: Setup Sound, Vibration< Display Alarm Details
   navigation() {
     this.props.navigation.navigate("Home");
   }

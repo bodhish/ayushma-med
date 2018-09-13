@@ -216,11 +216,10 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: "#16CB93",
+    backgroundColor: "#fff",
     maxHeight: 200,
     borderColor: "#fff",
-    borderWidth: 0,
-    borderRadius: 20
+    borderWidth: 0
   },
   addReminder__cardLeft: {
     backgroundColor: "#fff",
@@ -230,6 +229,8 @@ const styles = StyleSheet.create({
   addReminder__cardRight: {
     borderRadius: 20,
     flex: 1,
+    backgroundColor: "#16CB93",
+    borderRadius: 20,
     flexDirection: "column"
   },
   addReminder__cardRightText: {
