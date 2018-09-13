@@ -61,7 +61,7 @@ class DetailsScreen extends React.Component {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.addReminder__root}>
           <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+            style={{ flex: 9, alignItems: "center", justifyContent: "center" }}
           >
             <View style={styles.addReminder__cards}>
               <View style={styles.addReminder__cardLeft}>
@@ -157,7 +157,6 @@ class DetailsScreen extends React.Component {
                     <Picker
                       style={{
                         position: "absolute",
-
                         width: 1000,
                         height: 1000
                       }}
@@ -191,13 +190,30 @@ class DetailsScreen extends React.Component {
               </View>
             </View>
           </View>
-          <Button
-            title="Add Reminder"
-            color="#16CB93"
-            onPress={() => {
-              this.saveData();
+
+          <TouchableOpacity
+            onPress={this.saveData.bind(this)}
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#16CB93",
+              maxHeight: 50,
+              flex: 1
             }}
-          />
+          >
+            <Text
+              style={{
+                color: "#fff",
+                paddingLeft: 10,
+                fontWeight: "bold",
+                marginTop: 10,
+                marginBottom: 10,
+                fontSize: 18
+              }}
+            >
+              ADD REMINDER
+            </Text>
+          </TouchableOpacity>
         </View>
       </TouchableWithoutFeedback>
     );
