@@ -6,6 +6,11 @@
 # dependencies
 /node_modules
 
+
+/android/app/build/intermediates
+/android/app/build/tmp
+/android/keystores
+
 # misc
 .env.local
 .env.development.local

@@ -68,7 +68,7 @@ class DetailsScreen extends React.Component {
                 <TextInput
                   underlineColorAndroid="transparent"
                   style={{
-                    color: "#FAFA32",
+                    color: "#16CB93",
                     fontSize: 20,
                     fontWeight: "bold",
                     paddingTop: 45,
