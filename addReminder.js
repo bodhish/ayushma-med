@@ -34,31 +34,16 @@ class DetailsScreen extends React.Component {
     });
   };
 
-  setAlarm() {
-    console.log("date: ");
-    let date = new Date(Date.now() + 10 * 1000);
-    console.log(date);
-    let newDate = date.getDate() + 1;
-
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 17);
-    // tomorrow.setHours(8, 0, 0, 0);
-    this.morning(tomorrow);
-
-    console.log(tomorrow);
-    // AndroidAlarms.setAlarm(12345, date.valueOf(), false);
-  }
-
   morning(value) {
-    value.setHours(8, 0, 0, 0);
+    value.setHours(4, 22, 0, 0);
     return value;
   }
   afternoon(value) {
-    value.setHours(12, 0, 0, 0);
+    value.setHours(4, 24, 0, 0);
     return value;
   }
   night(value) {
-    value.setHours(20, 0, 0, 0);
+    value.setHours(4, 26, 0, 0);
     return value;
   }
 
@@ -82,8 +67,47 @@ class DetailsScreen extends React.Component {
       }
     );
     this.props.navigation.state.params.getData();
+    this.setAlarm();
+  }
+
+  setAlarm() {
+    console.log("alarams");
+    for (i = 0; i < this.state.numberOfDays; i++) {
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + i);
+      if (this.state.morning) {
+        this.morning(tomorrow);
+        AndroidAlarms.setAlarm(123456, tomorrow.valueOf(), false);
+        console.log("Morning" + tomorrow);
+      }
+      if (this.state.afternoon) {
+        this.afternoon(tomorrow);
+        AndroidAlarms.setAlarm(123457, tomorrow.valueOf(), false);
+        console.log("Afternoon" + tomorrow);
+      }
+      if (this.state.night) {
+        this.night(tomorrow);
+        AndroidAlarms.setAlarm(123458, tomorrow.valueOf(), false);
+        console.log("Night" + tomorrow);
+      }
+
+      // this.morning(tomorrow);
+    }
+    console.log("date: ");
+    let date = new Date(Date.now() + 10 * 1000);
+    console.log(date);
+    let newDate = date.getDate() + 1;
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 17);
+    // tomorrow.setHours(8, 0, 0, 0);
+    this.morning(tomorrow);
+
+    console.log(tomorrow);
+    // AndroidAlarms.setAlarm(12345, date.valueOf(), false);
     this.props.navigation.navigate("Home");
   }
+
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
