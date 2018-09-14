@@ -95,6 +95,7 @@ class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
+
         <ScrollView style={styles.app__body}>
           {reminderData.map((result, i, store) => {
             key = store[i][0];
@@ -113,6 +114,33 @@ class HomeScreen extends React.Component {
             );
           })}
         </ScrollView>
+        <TouchableOpacity
+          style={{
+            borderWidth: 8,
+            borderColor: "rgba(255, 255, 255, .9)",
+            // borderColor: "#Fff",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 80,
+            position: "absolute",
+            bottom: 10,
+            right: 10,
+            height: 80,
+            backgroundColor: "#rgba(22, 203, 147, .9)",
+            borderRadius: 100
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 60,
+              color: "#6C6C6C",
+              fontWeight: "bold",
+              marginBottom: 5
+            }}
+          >
+            +
+          </Text>
+        </TouchableOpacity>
       </View>
     );
   }
