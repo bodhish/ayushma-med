@@ -14,8 +14,8 @@ class LogoTitle extends React.Component {
   render() {
     return (
       <Image
-        source={require("./res/logo.png")}
-        style={{ marginLeft: 10, width: 30, height: 30 }}
+        source={require("./res/logo_head.png")}
+        style={{ marginLeft: 22, marginTop: 20, width: 60, height: 60 }}
       />
     );
   }
@@ -64,35 +64,22 @@ class HomeScreen extends React.Component {
     return (
       <View style={styles.app__root}>
         <View style={styles.app__header}>
-          <View style={styles.app__headerText}>
+          <LogoTitle />
+          <View
+            style={{
+              marginTop: 35,
+              marginLeft: 10
+            }}
+          >
             <Text
               style={{
                 fontSize: 40,
-                color: "#fff",
-                marginTop: 90,
-                marginLeft: 10,
-                fontWeight: "bold"
+                color: "#16CB93",
+                paddingBottom: 15
               }}
             >
               REMINDERS
             </Text>
-          </View>
-          <View style={styles.app__HeaderCircleContainer}>
-            <TouchableOpacity
-              style={styles.app__button}
-              onPress={this.addNewReminder.bind(this)}
-            >
-              <Text
-                style={{
-                  fontSize: 60,
-                  color: "#6C6C6C",
-                  fontWeight: "bold",
-                  marginRight: 2
-                }}
-              >
-                +
-              </Text>
-            </TouchableOpacity>
           </View>
         </View>
 
@@ -115,6 +102,7 @@ class HomeScreen extends React.Component {
           })}
         </ScrollView>
         <TouchableOpacity
+          onPress={this.addNewReminder.bind(this)}
           style={{
             borderWidth: 8,
             borderColor: "rgba(255, 255, 255, .9)",
@@ -133,7 +121,7 @@ class HomeScreen extends React.Component {
           <Text
             style={{
               fontSize: 60,
-              color: "#6C6C6C",
+              color: "#fff",
               fontWeight: "bold",
               marginBottom: 5
             }}
@@ -153,19 +141,10 @@ const styles = StyleSheet.create({
   },
   app__header: {
     flexDirection: "row",
-    backgroundColor: "#16CB93",
-    height: 150
+    backgroundColor: "#fff",
+    height: 80
   },
-  app__headerText: {
-    flex: 3
-  },
-  app__HeaderCircleContainer: {
-    flex: 1,
-    marginTop: 15,
-    marginRight: 15,
-    alignItems: "center",
-    justifyContent: "center"
-  },
+
   app__body: {
     flex: 4,
     marginTop: 10,

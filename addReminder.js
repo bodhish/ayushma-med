@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
@@ -12,6 +11,7 @@ import {
   AsyncStorage,
   StyleSheet
 } from "react-native";
+import AndroidAlarms from "react-native-android-alarms";
 
 class DetailsScreen extends React.Component {
   constructor(props) {
@@ -33,6 +33,34 @@ class DetailsScreen extends React.Component {
       console.log(newKey);
     });
   };
+
+  setAlarm() {
+    console.log("date: ");
+    let date = new Date(Date.now() + 10 * 1000);
+    console.log(date);
+    let newDate = date.getDate() + 1;
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 17);
+    // tomorrow.setHours(8, 0, 0, 0);
+    this.morning(tomorrow);
+
+    console.log(tomorrow);
+    // AndroidAlarms.setAlarm(12345, date.valueOf(), false);
+  }
+
+  morning(value) {
+    value.setHours(8, 0, 0, 0);
+    return value;
+  }
+  afternoon(value) {
+    value.setHours(12, 0, 0, 0);
+    return value;
+  }
+  night(value) {
+    value.setHours(20, 0, 0, 0);
+    return value;
+  }
 
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);

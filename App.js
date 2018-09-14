@@ -21,7 +21,11 @@ export default class App extends React.Component {
         Notify: Notify
       },
       {
-        initialRouteName: "Home"
+        initialRouteName: "Home",
+        headerMode: "none",
+        navigationOptions: {
+          headerVisible: false
+        }
       }
     );
     this.props.newID = this.props.alarmID;

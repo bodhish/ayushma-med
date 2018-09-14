@@ -27,8 +27,8 @@ class Notify extends React.Component {
     );
   }
   handleBackButtonClick() {
-    // BackHandler.exitApp();
-    // return true;
+    BackHandler.exitApp();
+    return true;
   }
 
   render() {
