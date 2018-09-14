@@ -4,6 +4,9 @@ import Reminder from "./reminder";
 import AddReminder from "./addReminder";
 import Notify from "./notify";
 import PropTypes from "prop-types";
+import Settings from "./settings";
+
+import { StatusBar } from "react-native";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,7 +21,8 @@ export default class App extends React.Component {
       {
         Home: Reminder,
         AddReminder: AddReminder,
-        Notify: Notify
+        Notify: Notify,
+        Settings: Settings
       },
       {
         initialRouteName: "Home",

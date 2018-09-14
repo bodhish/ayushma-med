@@ -2,6 +2,7 @@ import React from "react";
 import {
   Image,
   ScrollView,
+  StatusBar,
   View,
   TouchableOpacity,
   Text,
@@ -9,17 +10,7 @@ import {
   StyleSheet
 } from "react-native";
 import Card from "./card";
-
-class LogoTitle extends React.Component {
-  render() {
-    return (
-      <Image
-        source={require("./res/logo_head.png")}
-        style={{ marginLeft: 22, marginTop: 20, width: 60, height: 60 }}
-      />
-    );
-  }
-}
+<StatusBar hidden={true} />;
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -33,10 +24,6 @@ class HomeScreen extends React.Component {
       reminders: []
     };
   }
-
-  static navigationOptions = {
-    headerTitle: <LogoTitle />
-  };
 
   componentDidMount = () => {
     this.getData();
@@ -59,28 +46,49 @@ class HomeScreen extends React.Component {
     this.getData();
   }
 
+  loadSettings() {
+    this.props.navigation.navigate("Settings");
+  }
+
   render() {
     let reminderData = this.state.reminders;
     return (
       <View style={styles.app__root}>
         <View style={styles.app__header}>
-          <LogoTitle />
-          <View
-            style={{
-              marginTop: 35,
-              marginLeft: 10
-            }}
-          >
+          <View style={{ flex: 5, flexDirection: "row" }}>
+            <Image
+              source={require("./res/logo_head.png")}
+              style={{ marginLeft: 22, marginTop: 20, width: 60, height: 60 }}
+            />
             <Text
               style={{
+                marginTop: 35,
+                marginLeft: 10,
+                marginRight: 10,
                 fontSize: 40,
-                color: "#16CB93",
-                paddingBottom: 15
+                color: "#16CB93"
               }}
             >
               REMINDERS
             </Text>
           </View>
+          <TouchableOpacity
+            style={{ flex: 1 }}
+            onPress={this.loadSettings.bind(this)}
+          >
+            <Text
+              style={{
+                fontSize: 40,
+                fontFamily: "FontAwesome",
+                color: "#6C6C6C",
+                marginTop: 40,
+                paddingBottom: 10,
+                marginRight: 10
+              }}
+            >
+              &#xf013;
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <ScrollView style={styles.app__body}>
