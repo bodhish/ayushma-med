@@ -35,28 +35,32 @@ class DetailsScreen extends React.Component {
   };
 
   morning(value) {
-    value.setHours(4, 22, 0, 0);
+    value.setHours(2, 11, 0, 0);
     return value;
   }
   afternoon(value) {
-    value.setHours(4, 24, 0, 0);
+    value.setHours(2, 12, 0, 0);
     return value;
   }
   night(value) {
-    value.setHours(4, 26, 0, 0);
+    value.setHours(2, 13, 0, 0);
     return value;
   }
 
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
+    var newDate = new Date();
+    newDate.setDate(newDate.getDate() + parseInt(this.state.numberOfDays));
 
     let reminder = {
       name: this.state.name,
       morning: this.state.morning,
       afternoon: this.state.afternoon,
       night: this.state.night,
-      numberOfDays: this.state.numberOfDays
+      numberOfDays: this.state.numberOfDays,
+      date: newDate.valueOf()
     };
+
     AsyncStorage.setItem(
       JSON.stringify(this.state.id),
       JSON.stringify(reminder),
@@ -72,39 +76,26 @@ class DetailsScreen extends React.Component {
 
   setAlarm() {
     console.log("alarams");
-    for (i = 0; i < this.state.numberOfDays; i++) {
+    for (i = 0; i < parseInt(this.state.numberOfDays); i++) {
       var tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + i);
       if (this.state.morning) {
         this.morning(tomorrow);
-        AndroidAlarms.setAlarm(123456, tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(this.state.id + "a", tomorrow.valueOf(), false);
         console.log("Morning" + tomorrow);
       }
       if (this.state.afternoon) {
         this.afternoon(tomorrow);
-        AndroidAlarms.setAlarm(123457, tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(this.state.id + "b", tomorrow.valueOf(), false);
         console.log("Afternoon" + tomorrow);
       }
       if (this.state.night) {
         this.night(tomorrow);
-        AndroidAlarms.setAlarm(123458, tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(this.state.id + "c", tomorrow.valueOf(), false);
         console.log("Night" + tomorrow);
       }
-
-      // this.morning(tomorrow);
     }
-    console.log("date: ");
-    let date = new Date(Date.now() + 10 * 1000);
-    console.log(date);
-    let newDate = date.getDate() + 1;
 
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 17);
-    // tomorrow.setHours(8, 0, 0, 0);
-    this.morning(tomorrow);
-
-    console.log(tomorrow);
-    // AndroidAlarms.setAlarm(12345, date.valueOf(), false);
     this.props.navigation.navigate("Home");
   }
 
@@ -213,7 +204,9 @@ class DetailsScreen extends React.Component {
                         height: 1000
                       }}
                       onValueChange={(itemValue, itemIndex) =>
-                        this.setState({ numberOfDays: itemValue })
+                        this.setState({
+                          numberOfDays: itemValue
+                        })
                       }
                     >
                       <Picker.Item
