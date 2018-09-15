@@ -157,7 +157,6 @@ Card.propTypes = {
   morning: PropTypes.bool,
   afternoon: PropTypes.bool,
   night: PropTypes.bool,
-  numberOfDays: PropTypes.number,
   id: PropTypes.string,
   date: PropTypes.number,
   getData: PropTypes.func

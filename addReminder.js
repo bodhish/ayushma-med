@@ -57,7 +57,6 @@ class DetailsScreen extends React.Component {
       morning: this.state.morning,
       afternoon: this.state.afternoon,
       night: this.state.night,
-      numberOfDays: this.state.numberOfDays,
       date: newDate.valueOf()
     };
 
