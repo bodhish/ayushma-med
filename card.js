@@ -11,15 +11,30 @@ import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
 
 class Card extends React.Component {
-  removeData(id) {
+  onCardPress(id) {
     console.log("toast");
     ToastAndroid.show("Swipe Right to Delete the Reminder", ToastAndroid.SHORT);
   }
 
   onSwipeRight(id) {
     ToastAndroid.show("Deleted your Reminder", ToastAndroid.SHORT);
-    AsyncStorage.removeItem(id, err => {});
+    this.removeData();
+  }
+
+  removeData() {
+    AsyncStorage.removeItem(this.props.id, err => {});
     this.props.getData();
+  }
+
+  getNumberOfDays(dateString) {
+    const today = new Date();
+    const date = new Date(dateString);
+    const numberOfDays = date.getDate() - today.getDate();
+    if (numberOfDays < 1) {
+      this.removeData();
+    }
+
+    return numberOfDays;
   }
   render() {
     const config = {
@@ -33,7 +48,7 @@ class Card extends React.Component {
       >
         <TouchableOpacity
           onPress={() => {
-            this.removeData(this.props.id);
+            this.onCardPress(this.props.id);
           }}
         >
           <View style={styles.app__cards}>
@@ -47,7 +62,7 @@ class Card extends React.Component {
                       fontSize: 60
                     }}
                   >
-                    {this.props.numberOfDays}
+                    {this.getNumberOfDays(this.props.date)}
                   </Text>
                 </View>
               </View>
@@ -144,6 +159,7 @@ Card.propTypes = {
   night: PropTypes.bool,
   numberOfDays: PropTypes.number,
   id: PropTypes.string,
+  date: PropTypes.number,
   getData: PropTypes.func
 };
 

@@ -104,6 +104,7 @@ class HomeScreen extends React.Component {
                 afternoon={value.afternoon}
                 night={value.evening}
                 numberOfDays={parseInt(value.numberOfDays)}
+                date={value.date}
                 getData={this.getData.bind(this)}
               />
             );
