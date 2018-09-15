@@ -20,7 +20,6 @@ class HomeScreen extends React.Component {
       morning: false,
       afternoon: false,
       night: false,
-      numberOfDays: 1,
       reminders: []
     };
   }
