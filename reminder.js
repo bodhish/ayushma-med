@@ -92,7 +92,7 @@ class HomeScreen extends React.Component {
         </View>
 
         <ScrollView style={styles.app__body}>
-          {reminderData.map((result, i, store) => {
+          {reminderData.reverse().map((result, i, store) => {
             key = store[i][0];
             value = JSON.parse(store[i][1]);
             return (
