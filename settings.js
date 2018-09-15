@@ -15,25 +15,49 @@ class Settings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      morning: false,
-      afternoon: false,
-      night: false
+      morning: "08:00",
+      afternoon: "12:00",
+      night: "20:00"
     };
   }
 
   handleBackButton() {
-    this.props.navigation.navigate("Reminder");
+    this.props.navigation.navigate("Home");
   }
 
-  timePicker() {
+  async timePickerM(value) {
     try {
-      const { action, hour, minute } = TimePickerAndroid.open({
-        hour: 14,
-        minute: 0,
+      const { action, hour, minute } = await TimePickerAndroid.open({
         is24Hour: false // Will display '2 PM'
       });
       if (action !== TimePickerAndroid.dismissedAction) {
-        // Selected hour (0-23), minute (0-59)
+        this.setState({ morning: hour + ":" + minute });
+      }
+    } catch ({ code, message }) {
+      console.warn("Cannot open time picker", message);
+    }
+  }
+
+  async timePickerA(value) {
+    try {
+      const { action, hour, minute } = await TimePickerAndroid.open({
+        is24Hour: false // Will display '2 PM'
+      });
+      if (action !== TimePickerAndroid.dismissedAction) {
+        this.setState({ afternoon: hour + ":" + minute });
+      }
+    } catch ({ code, message }) {
+      console.warn("Cannot open time picker", message);
+    }
+  }
+
+  async timePickerN(value) {
+    try {
+      const { action, hour, minute } = await TimePickerAndroid.open({
+        is24Hour: false // Will display '2 PM'
+      });
+      if (action !== TimePickerAndroid.dismissedAction) {
+        this.setState({ night: hour + ":" + minute });
       }
     } catch ({ code, message }) {
       console.warn("Cannot open time picker", message);
@@ -63,15 +87,80 @@ class Settings extends React.Component {
           </Text>
         </View>
         <View style={styles.app__Settings}>
-          <View>
-            <Image
-              source={require("./res/logo.png")}
-              style={{ width: 150, height: 150 }}
-            />
-            <Text>Reminder Id </Text>
-            <Text>Reminder Name </Text>
-          </View>
+          <Image
+            source={require("./res/logo.png")}
+            style={{ width: 150, height: 150 }}
+          />
+          <Text
+            style={{
+              color: "grey",
+              paddingLeft: 10,
+              fontWeight: "bold",
+              marginTop: 10,
+              marginBottom: 10,
+              fontSize: 20
+            }}
+          >
+            How do you define Time?
+          </Text>
+
+          <TouchableOpacity
+            style={styles.app__timeSelect}
+            onPress={this.timePickerM.bind(this)}
+          >
+            <View>
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  fontWeight: "bold",
+                  marginTop: 10,
+                  marginBottom: 10,
+                  fontSize: 18
+                }}
+              >
+                Morning: {this.state.morning}
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.app__timeSelect}
+            onPress={this.timePickerA.bind(this)}
+          >
+            <View>
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  fontWeight: "bold",
+                  marginTop: 10,
+                  marginBottom: 10,
+                  fontSize: 18
+                }}
+              >
+                Afternoon: {this.state.afternoon}
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.app__timeSelect}
+            onPress={this.timePickerN.bind(this)}
+          >
+            <View>
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  fontWeight: "bold",
+                  marginTop: 10,
+                  marginBottom: 10,
+                  fontSize: 18
+                }}
+              >
+                Night: {this.state.night}
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
+
         <TouchableOpacity
           style={styles.app__SettingsCloseButton}
           onPress={this.handleBackButton.bind(this)}
@@ -86,7 +175,7 @@ class Settings extends React.Component {
                 fontSize: 18
               }}
             >
-              CLOSE REMINDER
+              Save Settings
             </Text>
           </View>
         </TouchableOpacity>
@@ -129,6 +218,18 @@ const styles = StyleSheet.create({
 
     borderColor: "#fff",
     borderWidth: 0,
+    borderRadius: 20
+  },
+  app__timeSelect: {
+    flex: 1,
+    width: 300,
+    maxHeight: 80,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 5,
+    marginBottom: 5,
+    backgroundColor: "#16CB93",
+
     borderRadius: 20
   }
 });
