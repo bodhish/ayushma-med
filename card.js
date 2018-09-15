@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
+import AndroidAlarms from "react-native-android-alarms";
 
 class Card extends React.Component {
   onCardPress(id) {
@@ -23,12 +24,31 @@ class Card extends React.Component {
 
   removeData() {
     AsyncStorage.removeItem(this.props.id, err => {});
+    const today = new Date();
+    const date = new Date(this.props.date);
+    const numberOfDays = date.getDate() - today.getDate();
+    const newID = this.props.id.slice(1, 10);
+    for (i = 0; i < numberOfDays; i++) {
+      if (this.props.morning) {
+        AndroidAlarms.clearAlarm(newID + "_m" + i);
+        console.log("R Morning");
+      }
+      if (this.props.afternoon) {
+        AndroidAlarms.clearAlarm(newID + "_a" + i);
+        console.log("R Afternoon");
+      }
+      if (this.props.night) {
+        AndroidAlarms.clearAlarm(newID + "_n" + i);
+        console.log("R Night");
+      }
+    }
+
     this.props.getData();
   }
 
-  getNumberOfDays(dateString) {
+  getNumberOfDays(value) {
     const today = new Date();
-    const date = new Date(dateString);
+    const date = new Date(value);
     const numberOfDays = date.getDate() - today.getDate();
     if (numberOfDays < 1) {
       this.removeData();
