@@ -20,11 +20,32 @@ class Settings extends React.Component {
       night: "20:00"
     };
   }
+  componentDidMount = () => {
+    AsyncStorage.getItem(JSON.stringify("settings"), (err, result) => {
+      if (result) {
+        var data = JSON.parse(result);
+        this.setState({
+          morning: data.morning_time,
+          afternoon: data.afternoon_time,
+          night: data.night_time
+        });
+      }
+    });
+  };
 
   handleBackButton() {
+    this.saveSettings();
     this.props.navigation.navigate("Home");
   }
 
+  saveSettings() {
+    let settings = {
+      morning_time: this.state.morning,
+      afternoon_time: this.state.afternoon,
+      night_time: this.state.night
+    };
+    AsyncStorage.setItem(JSON.stringify("settings"), JSON.stringify(settings));
+  }
   async timePickerM(value) {
     try {
       const { action, hour, minute } = await TimePickerAndroid.open({

@@ -30,7 +30,7 @@ class HomeScreen extends React.Component {
 
   getData() {
     AsyncStorage.getAllKeys((err, keys) => {
-      console.log("keys " + keys);
+      keys.pop("settings");
       AsyncStorage.multiGet(keys).then(data => {
         this.setState({ reminders: data });
       });
