@@ -28,11 +28,19 @@ class DetailsScreen extends React.Component {
 
   componentDidMount = () => {
     AsyncStorage.getAllKeys((err, keys) => {
-      newKey = keys.length + 1;
-      this.setState({ id: newKey });
-      console.log(newKey);
+      const newId = this.generateID();
+      keys.includes(newId)
+        ? this.setState({ id: this.generateID() })
+        : this.setState({ id: newId });
+      console.log(this.state.id);
     });
   };
+
+  generateID() {
+    return Math.random()
+      .toString(36)
+      .substr(2, 9);
+  }
 
   morning(value) {
     value.setHours(2, 11, 0, 0);
