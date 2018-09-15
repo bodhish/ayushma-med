@@ -88,17 +88,29 @@ class DetailsScreen extends React.Component {
       tomorrow.setDate(tomorrow.getDate() + i);
       if (this.state.morning) {
         this.morning(tomorrow);
-        AndroidAlarms.setAlarm(this.state.id + "a", tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(
+          this.state.id + "_m" + i,
+          tomorrow.valueOf(),
+          false
+        );
         console.log("Morning" + tomorrow);
       }
       if (this.state.afternoon) {
         this.afternoon(tomorrow);
-        AndroidAlarms.setAlarm(this.state.id + "b", tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(
+          this.state.id + "_a" + i,
+          tomorrow.valueOf(),
+          false
+        );
         console.log("Afternoon" + tomorrow);
       }
       if (this.state.night) {
         this.night(tomorrow);
-        AndroidAlarms.setAlarm(this.state.id + "c", tomorrow.valueOf(), false);
+        AndroidAlarms.setAlarm(
+          this.state.id + "_n" + i,
+          tomorrow.valueOf(),
+          false
+        );
         console.log("Night" + tomorrow);
       }
     }
