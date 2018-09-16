@@ -13,12 +13,23 @@ import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
 
 class Notify extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      morning: false,
+      afternoon: false,
+      night: false
+    };
+  }
+
   // TO DO: Setup Sound, Vibration< Display Alarm Details
   componentWillMount() {
     BackHandler.addEventListener(
       "hardwareBackPress",
       this.handleBackButtonClick
     );
+    this.getData();
   }
   componentWillUnmount() {
     BackHandler.removeEventListener(
@@ -29,6 +40,20 @@ class Notify extends React.Component {
   handleBackButtonClick() {
     BackHandler.exitApp();
     return true;
+  }
+
+  getData() {
+    AsyncStorage.getItem(this.props.alarmID.substr(0, 9), (err, result) => {
+      if (result) {
+        var data = JSON.parse(result);
+        this.setState({
+          name: data.name,
+          morning: data.morning,
+          afternoon: data.afternoon,
+          night: data.night
+        });
+      }
+    });
   }
 
   render() {
@@ -59,8 +84,10 @@ class Notify extends React.Component {
               source={require("./res/logo.png")}
               style={{ width: 150, height: 150 }}
             />
-            <Text>Reminder Id {this.props.alarmID}</Text>
-            <Text>Reminder Name {this.props.alarmID}</Text>
+            <Text>Reminder Name :{this.state.name}</Text>
+            <Text>Morning: {this.state.morning ? "True" : "False"}</Text>
+            <Text>Afternoon: {this.state.afternoon ? "True" : "False"}</Text>
+            <Text>Night: {this.state.night ? "True" : "False"}</Text>
           </View>
         </View>
         <TouchableOpacity
