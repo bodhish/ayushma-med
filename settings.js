@@ -44,7 +44,7 @@ class Settings extends React.Component {
       afternoon_time: this.state.afternoon,
       night_time: this.state.night
     };
-    AsyncStorage.setItem(JSON.stringify("settings"), JSON.stringify(settings));
+    AsyncStorage.setItem("settings", JSON.stringify(settings));
   }
   async timePickerM(value) {
     try {
