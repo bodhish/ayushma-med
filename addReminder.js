@@ -22,17 +22,32 @@ class DetailsScreen extends React.Component {
       afternoon: false,
       night: false,
       numberOfDays: 0,
-      id: 1
+      id: 1,
+      morning_time: "08:00",
+      afternoon_time: "12:00",
+      night_time: "20:00"
     };
   }
 
   componentDidMount = () => {
     AsyncStorage.getAllKeys((err, keys) => {
       const newId = this.generateID();
+      console.log("new" + newId);
       keys.includes(newId)
         ? this.setState({ id: this.generateID() })
         : this.setState({ id: newId });
       console.log(this.state.id);
+    });
+
+    AsyncStorage.getItem(JSON.stringify("settings"), (err, result) => {
+      if (result) {
+        var data = JSON.parse(result);
+        this.setState({
+          morning_time: data.morning_time,
+          afternoon_time: data.afternoon_time,
+          night_time: data.night_time
+        });
+      }
     });
   };
 
@@ -43,15 +58,30 @@ class DetailsScreen extends React.Component {
   }
 
   morning(value) {
-    value.setHours(2, 11, 0, 0);
+    value.setHours(
+      this.state.morning_time.substr(0, 2),
+      this.state.morning_time.substr(3, 5),
+      0,
+      0
+    );
     return value;
   }
   afternoon(value) {
-    value.setHours(2, 12, 0, 0);
+    value.setHours(
+      this.state.afternoon_time.substr(0, 2),
+      this.state.afternoon_time.substr(3, 5),
+      0,
+      0
+    );
     return value;
   }
   night(value) {
-    value.setHours(2, 13, 0, 0);
+    value.setHours(
+      this.state.night_time.substr(0, 2),
+      this.state.night_time.substr(3, 5),
+      0,
+      0
+    );
     return value;
   }
 
@@ -68,15 +98,11 @@ class DetailsScreen extends React.Component {
       date: newDate.valueOf()
     };
 
-    AsyncStorage.setItem(
-      JSON.stringify(this.state.id),
-      JSON.stringify(reminder),
-      () => {
-        AsyncStorage.getItem(JSON.stringify(this.state.id), (err, result) => {
-          console.log("add" + result);
-        });
-      }
-    );
+    AsyncStorage.setItem(this.state.id, JSON.stringify(reminder), () => {
+      AsyncStorage.getItem(this.state.id, (err, result) => {
+        console.log("add" + result);
+      });
+    });
     this.props.navigation.state.params.getData();
     this.setAlarm();
   }
