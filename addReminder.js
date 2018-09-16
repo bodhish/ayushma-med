@@ -39,7 +39,7 @@ class DetailsScreen extends React.Component {
       console.log(this.state.id);
     });
 
-    AsyncStorage.getItem(JSON.stringify("settings"), (err, result) => {
+    AsyncStorage.getItem("settings", (err, result) => {
       if (result) {
         var data = JSON.parse(result);
         this.setState({
