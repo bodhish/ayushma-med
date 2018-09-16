@@ -14,6 +14,7 @@ import AndroidAlarms from "react-native-android-alarms";
 class Card extends React.Component {
   onCardPress(id) {
     console.log("toast");
+    console.log(this.props.id);
     ToastAndroid.show("Swipe Right to Delete the Reminder", ToastAndroid.SHORT);
   }
 
@@ -27,7 +28,7 @@ class Card extends React.Component {
     const today = new Date();
     const date = new Date(this.props.date);
     const numberOfDays = date.getDate() - today.getDate();
-    const newID = this.props.id.slice(1, 10);
+    const newID = this.props.id.substr(1, 10);
     for (i = 0; i < numberOfDays; i++) {
       if (this.props.morning) {
         AndroidAlarms.clearAlarm(newID + "_m" + i);
