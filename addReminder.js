@@ -85,6 +85,22 @@ class DetailsScreen extends React.Component {
     return value;
   }
 
+  setMorningAlarm(newDate, i) {
+    this.morning(newDate);
+    AndroidAlarms.setAlarm(this.state.id + "_m" + i, newDate.valueOf(), false);
+    console.log("Morning" + newDate + "    " + i);
+  }
+  setAfternoonAlarm(newDate, i) {
+    this.afternoon(newDate);
+    AndroidAlarms.setAlarm(this.state.id + "_a" + i, newDate.valueOf(), false);
+    console.log("Afternoon" + newDate);
+  }
+  setNightAlarm(newDate, i) {
+    this.night(newDate);
+    AndroidAlarms.setAlarm(this.state.id + "_n" + i, newDate.valueOf(), false);
+    console.log("Night" + newDate);
+  }
+
   saveData() {
     ToastAndroid.show("We will remind you :)", ToastAndroid.SHORT);
     var newDate = new Date();
@@ -108,36 +124,69 @@ class DetailsScreen extends React.Component {
   }
 
   setAlarm() {
-    console.log("alarams");
-    for (i = 0; i < parseInt(this.state.numberOfDays); i++) {
+    console.log("alarms");
+    var today = new Date();
+
+    const currentTIme = today.getHours();
+    console.log("time : " + currentTIme);
+    if (currentTIme <= parseInt(this.state.morning_time.substr(0, 2))) {
+      if (this.state.morning) {
+        this.setMorningAlarm(today, 0);
+      }
+      if (this.state.afternoon) {
+        this.setAfternoonAlarm(today, 0);
+      }
+      if (this.state.night) {
+        this.setNightAlarm(today, 0);
+      }
+    } else if (
+      currentTIme <= parseInt(this.state.afternoon_time.substr(0, 2))
+    ) {
+      if (this.state.afternoon) {
+        this.setAfternoonAlarm(today, 0);
+      }
+      if (this.state.night) {
+        this.setNightAlarm(today, 0);
+      }
+      today.setDate(today.getDate() + parseInt(this.state.numberOfDays));
+      if (this.state.morning) {
+        this.setMorningAlarm(today, parseInt(this.state.numberOfDays));
+      }
+    } else if (currentTIme <= parseInt(this.state.night_time.substr(0, 2))) {
+      if (this.state.night) {
+        this.setNightAlarm(today, 0);
+      }
+      today.setDate(today.getDate() + parseInt(this.state.numberOfDays));
+      if (this.state.morning) {
+        this.setMorningAlarm(today, parseInt(this.state.numberOfDays));
+      }
+      if (this.state.afternoon) {
+        this.setAfternoonAlarm(today, parseInt(this.state.numberOfDays));
+      }
+    } else {
+      today.setDate(today.getDate() + parseInt(this.state.numberOfDays));
+      if (this.state.morning) {
+        this.setMorningAlarm(today, parseInt(this.state.numberOfDays));
+      }
+      if (this.state.afternoon) {
+        this.setAfternoonAlarm(today, parseInt(this.state.numberOfDays));
+      }
+      if (this.state.night) {
+        this.setNightAlarm(today, parseInt(this.state.numberOfDays));
+      }
+    }
+
+    for (i = 1; i < parseInt(this.state.numberOfDays); i++) {
       var newDate = new Date();
       newDate.setDate(newDate.getDate() + i);
       if (this.state.morning) {
-        this.morning(newDate);
-        AndroidAlarms.setAlarm(
-          this.state.id + "_m" + i,
-          newDate.valueOf(),
-          false
-        );
-        console.log("Morning" + newDate);
+        this.setMorningAlarm(newDate, i);
       }
       if (this.state.afternoon) {
-        this.afternoon(newDate);
-        AndroidAlarms.setAlarm(
-          this.state.id + "_a" + i,
-          newDate.valueOf(),
-          false
-        );
-        console.log("Afternoon" + newDate);
+        this.setAfternoonAlarm(newDate, i);
       }
       if (this.state.night) {
-        this.night(newDate);
-        AndroidAlarms.setAlarm(
-          this.state.id + "_n" + i,
-          newDate.valueOf(),
-          false
-        );
-        console.log("Night" + newDate);
+        this.setNightAlarm(newDate, i);
       }
     }
 
