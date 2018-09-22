@@ -29,10 +29,10 @@ class Card extends React.Component {
     const date = new Date(this.props.date);
     const numberOfDays = date.getDate() - today.getDate();
     const newID = this.props.id.substr(1, 10);
-    for (i = 0; i < numberOfDays; i++) {
+    for (i = 0; i <= numberOfDays; i++) {
       if (this.props.morning) {
         AndroidAlarms.clearAlarm(newID + "_m" + i);
-        console.log("R Morning");
+        console.log("R Morning  : " + i);
       }
       if (this.props.afternoon) {
         AndroidAlarms.clearAlarm(newID + "_a" + i);
