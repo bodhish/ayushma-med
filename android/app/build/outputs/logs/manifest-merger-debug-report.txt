@@ -95,6 +95,7 @@ ADDED from /Users/bodhi/code/ayushma-med/android/app/src/main/AndroidManifest.xm
 		ADDED from /Users/bodhi/code/ayushma-med/android/app/src/main/AndroidManifest.xml:37:11-61
 uses-sdk
 INJECTED from /Users/bodhi/code/ayushma-med/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [Ayushma:react-native-play-sound:unspecified] /Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/Ayushma/react-native-play-sound/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [Ayushma:react-native-android-alarms:unspecified] /Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/Ayushma/react-native-android-alarms/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.1.1/AndroidManifest.xml:20:5-44

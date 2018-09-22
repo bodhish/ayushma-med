@@ -57,6 +57,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/Ayushma/react-native-play-sound/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e874a7c3ab527d797feb10dd223e937e4a76cad8">
+        <dex dex="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/pre-dexed/debug/Ayushma-react-native-play-sound-unspecified_d1e18ef6c0d406f723c3d243ed3a0d9808eac817.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/bodhi/code/ayushma-med/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"

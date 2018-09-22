@@ -5,6 +5,7 @@ import android.app.Application;
 import com.dawnchorus.alarms.AlarmPackage;
 
 import com.facebook.react.ReactApplication;
+import com.soundapp.SoundModulePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -23,7 +24,8 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(), new AlarmPackage());
+      return Arrays.<ReactPackage>asList(new MainReactPackage(),
+            new SoundModulePackage(), new AlarmPackage());
     }
 
     @Override

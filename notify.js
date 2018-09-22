@@ -3,7 +3,6 @@ import {
   View,
   TouchableOpacity,
   AsyncStorage,
-  ToastAndroid,
   Text,
   Image,
   BackHandler,
@@ -11,6 +10,12 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import GestureRecognizer from "react-native-swipe-gestures";
+import {
+  PlaySound,
+  StopSound,
+  PlaySoundRepeat,
+  PlaySoundMusicVolume
+} from "react-native-play-sound";
 
 class Notify extends React.Component {
   constructor(props) {
@@ -22,6 +27,10 @@ class Notify extends React.Component {
       night: false
     };
   }
+  componentDidMount = () => {
+    PlaySoundRepeat("bells");
+    // this.getData();
+  };
 
   // TO DO: Setup Sound, Vibration< Display Alarm Details
   componentWillMount() {
@@ -29,7 +38,6 @@ class Notify extends React.Component {
       "hardwareBackPress",
       this.handleBackButtonClick
     );
-    this.getData();
   }
   componentWillUnmount() {
     BackHandler.removeEventListener(
@@ -38,6 +46,7 @@ class Notify extends React.Component {
     );
   }
   handleBackButtonClick() {
+    StopSound();
     BackHandler.exitApp();
     return true;
   }
