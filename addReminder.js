@@ -110,34 +110,34 @@ class DetailsScreen extends React.Component {
   setAlarm() {
     console.log("alarams");
     for (i = 0; i < parseInt(this.state.numberOfDays); i++) {
-      var tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + i);
+      var newDate = new Date();
+      newDate.setDate(newDate.getDate() + i);
       if (this.state.morning) {
-        this.morning(tomorrow);
+        this.morning(newDate);
         AndroidAlarms.setAlarm(
           this.state.id + "_m" + i,
-          tomorrow.valueOf(),
+          newDate.valueOf(),
           false
         );
-        console.log("Morning" + tomorrow);
+        console.log("Morning" + newDate);
       }
       if (this.state.afternoon) {
-        this.afternoon(tomorrow);
+        this.afternoon(newDate);
         AndroidAlarms.setAlarm(
           this.state.id + "_a" + i,
-          tomorrow.valueOf(),
+          newDate.valueOf(),
           false
         );
-        console.log("Afternoon" + tomorrow);
+        console.log("Afternoon" + newDate);
       }
       if (this.state.night) {
-        this.night(tomorrow);
+        this.night(newDate);
         AndroidAlarms.setAlarm(
           this.state.id + "_n" + i,
-          tomorrow.valueOf(),
+          newDate.valueOf(),
           false
         );
-        console.log("Night" + tomorrow);
+        console.log("Night" + newDate);
       }
     }
 
@@ -232,7 +232,7 @@ class DetailsScreen extends React.Component {
 
               <View style={styles.addReminder__cardRight}>
                 <View style={styles.addReminder__cardRightCircle}>
-                  <TouchableOpacity style={styles.circleContainer}>
+                  <TouchableOpacity style={styles.addReminder__circleContainer}>
                     <Text
                       style={{
                         color: "#6C6C6C",
@@ -355,21 +355,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  circleContainer: {
+  addReminder__circleContainer: {
     position: "absolute",
     backgroundColor: "#fff",
     width: 90,
     height: 90,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-
-  HeaderCircle: {
-    position: "absolute",
-    backgroundColor: "#fff",
-    width: 80,
-    height: 80,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center"
