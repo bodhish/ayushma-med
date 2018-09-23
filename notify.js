@@ -64,7 +64,7 @@ class Notify extends React.Component {
   handleSnooze() {
     ToastAndroid.show("Alarm Snoozed for 30 mins", ToastAndroid.SHORT);
     var today = new Date();
-    today.setDate(today.getMinutes() + 2);
+    today.setDate(today.getMinutes() + 30);
     AndroidAlarms.setAlarm(this.props.alarmID + "_s", today.valueOf(), false);
     this.handleBackButtonClick();
   }
@@ -92,13 +92,17 @@ class Notify extends React.Component {
   checkTIme(key, value) {
     var today = new Date();
     const currentTIme = today.getHours();
-    if (currentTIme <= parseInt(this.state.morning_time.substr(0, 2))) {
+    if (currentTIme <= 1 + parseInt(this.state.morning_time.substr(0, 2))) {
       return value.morning ? this.showCards(key, value) : null;
     } else if (
-      currentTIme <= parseInt(this.state.afternoon_time.substr(0, 2))
+      currentTIme <=
+      1 + parseInt(this.state.afternoon_time.substr(0, 2))
     ) {
       return value.afternoon ? this.showCards(key, value) : null;
-    } else if (currentTIme <= parseInt(this.state.night_time.substr(0, 2))) {
+    } else if (
+      currentTIme <=
+      1 + parseInt(this.state.night_time.substr(0, 2))
+    ) {
       return value.night ? this.showCards(key, value) : null;
     } else {
       return value.night ? this.showCards(key, value) : null;
