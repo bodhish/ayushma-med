@@ -140,7 +140,8 @@ const styles = StyleSheet.create({
     maxHeight: 200,
     borderColor: "#fff",
     borderWidth: 0,
-    borderRadius: 20
+    borderRadius: 20,
+    elevation: 5
   },
   app__cardRight: {
     flex: 2

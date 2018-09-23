@@ -50,6 +50,10 @@ class HomeScreen extends React.Component {
     this.props.navigation.navigate("Settings");
   }
 
+  noReminders() {
+    return <Text>lalalal</Text>;
+  }
+
   render() {
     let reminderData = this.state.reminders;
     return (
@@ -90,8 +94,13 @@ class HomeScreen extends React.Component {
             </Text>
           </TouchableOpacity>
         </View>
-
         <ScrollView style={styles.app__body}>
+          {reminderData.length < 1 ? (
+            <View style={styles.app__noRemindersView}>
+              <Text style={styles.app__noReminders}>&#xf486;</Text>
+              <Text style={styles.app__noRemindersText}>ADD REMINDERS</Text>
+            </View>
+          ) : null}
           {reminderData.reverse().map((result, i, store) => {
             key = store[i][0];
             value = JSON.parse(store[i][1]);
@@ -114,7 +123,6 @@ class HomeScreen extends React.Component {
           style={{
             borderWidth: 8,
             borderColor: "rgba(255, 255, 255, .9)",
-            // borderColor: "#Fff",
             alignItems: "center",
             justifyContent: "center",
             width: 80,
@@ -150,7 +158,7 @@ const styles = StyleSheet.create({
   app__header: {
     flexDirection: "row",
     backgroundColor: "#fff",
-    height: 80
+    height: 90
   },
 
   app__body: {
@@ -168,6 +176,26 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignItems: "center",
     justifyContent: "center"
+  },
+  app__noRemindersView: {
+    marginTop: 160,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  app__noReminders: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 15,
+
+    fontFamily: "FontAwesomeBold",
+    fontSize: 200,
+    color: "#16CB93"
+  },
+  app__noRemindersText: {
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 28
   }
 });
 
