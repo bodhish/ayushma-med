@@ -54,7 +54,17 @@ class Settings extends React.Component {
         is24Hour: false // Will display '2 PM'
       });
       if (action !== TimePickerAndroid.dismissedAction) {
-        this.setState({ morning: hour + ":" + minute });
+        if (9 >= hour) {
+          var newHour = "0" + hour;
+        } else {
+          var newHour = hour;
+        }
+        if (9 >= minute) {
+          var newMinute = "0" + minute;
+        } else {
+          var newMinute = minute;
+        }
+        this.setState({ morning: newHour + ":" + newMinute });
       }
     } catch ({ code, message }) {
       console.warn("Cannot open time picker", message);
@@ -67,7 +77,17 @@ class Settings extends React.Component {
         is24Hour: false // Will display '2 PM'
       });
       if (action !== TimePickerAndroid.dismissedAction) {
-        this.setState({ afternoon: hour + ":" + minute });
+        if (9 >= hour) {
+          var newHour = "0" + hour;
+        } else {
+          var newHour = hour;
+        }
+        if (9 >= minute) {
+          var newMinute = "0" + minute;
+        } else {
+          var newMinute = minute;
+        }
+        this.setState({ afternoon: newHour + ":" + newMinute });
       }
     } catch ({ code, message }) {
       console.warn("Cannot open time picker", message);
@@ -80,18 +100,20 @@ class Settings extends React.Component {
         is24Hour: false // Will display '2 PM'
       });
       if (action !== TimePickerAndroid.dismissedAction) {
-        this.setState({ night: hour + ":" + minute });
+        if (9 >= hour) {
+          var newHour = "0" + hour;
+        } else {
+          var newHour = hour;
+        }
+        if (9 >= minute) {
+          var newMinute = "0" + minute;
+        } else {
+          var newMinute = minute;
+        }
+        this.setState({ night: newHour + ":" + newMinute });
       }
     } catch ({ code, message }) {
       console.warn("Cannot open time picker", message);
-    }
-  }
-
-  addZero(value) {
-    if (9 < parseInt(value.substr(3, 5))) {
-      return value;
-    } else {
-      return value + "0";
     }
   }
 
@@ -147,9 +169,7 @@ class Settings extends React.Component {
                 <Text style={styles.app__fontIcon}>&#xf185;</Text>
               </View>
               <View style={styles.app__cardRight}>
-                <Text style={styles.app__time}>
-                  {this.addZero(this.state.morning)}
-                </Text>
+                <Text style={styles.app__time}>{this.state.morning}</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -163,9 +183,7 @@ class Settings extends React.Component {
                 <Text style={styles.app__fontIcon}>&#xf111;</Text>
               </View>
               <View style={styles.app__cardRight}>
-                <Text style={styles.app__time}>
-                  {this.addZero(this.state.afternoon)}
-                </Text>
+                <Text style={styles.app__time}>{this.state.afternoon}</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -178,9 +196,7 @@ class Settings extends React.Component {
                 <Text style={styles.app__fontIcon}>&#xf186;</Text>
               </View>
               <View style={styles.app__cardRight}>
-                <Text style={styles.app__time}>
-                  {this.addZero(this.state.night)}
-                </Text>
+                <Text style={styles.app__time}>{this.state.night}</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -259,8 +275,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 10,
     marginBottom: 10,
-    // backgroundColor: "#fff",
-
     borderColor: "#fff",
     borderWidth: 0,
     borderRadius: 20

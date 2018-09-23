@@ -38,7 +38,7 @@ class Notify extends React.Component {
   }
 
   componentDidMount = () => {
-    // PlaySoundRepeat("bells");
+    PlaySoundRepeat("bells");
     this.getData();
   };
 
