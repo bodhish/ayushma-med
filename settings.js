@@ -32,8 +32,10 @@ class Settings extends React.Component {
       }
     });
   };
-
   handleBackButton() {
+    this.props.navigation.navigate("Home");
+  }
+  handleSaveButton() {
     this.saveSettings();
     this.props.navigation.navigate("Home");
   }
@@ -85,6 +87,14 @@ class Settings extends React.Component {
     }
   }
 
+  addZero(value) {
+    if (9 < parseInt(value.substr(3, 5))) {
+      return value;
+    } else {
+      return value + "0";
+    }
+  }
+
   render() {
     return (
       <View
@@ -108,39 +118,39 @@ class Settings extends React.Component {
           </Text>
         </View>
         <View style={styles.app__Settings}>
-          <Image
-            source={require("./res/logo.png")}
-            style={{ width: 150, height: 150 }}
-          />
-          <Text
-            style={{
-              color: "grey",
-              paddingLeft: 10,
-              fontWeight: "bold",
-              marginTop: 10,
-              marginBottom: 10,
-              fontSize: 20
-            }}
-          >
-            How do you define Time?
-          </Text>
+          <View style={styles.app__CardHeader}>
+            <Image
+              source={require("./res/logo.png")}
+              style={{ width: 50, height: 50 }}
+            />
+            <Text
+              style={{
+                flex: 1,
+                color: "#08cb88",
+                paddingLeft: 20,
+                fontWeight: "bold",
+                marginTop: 10,
+                marginBottom: 10,
+                fontSize: 28
+              }}
+            >
+              EDIT TIME
+            </Text>
+          </View>
 
           <TouchableOpacity
             style={styles.app__timeSelect}
             onPress={this.timePickerM.bind(this)}
           >
-            <View>
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  fontWeight: "bold",
-                  marginTop: 10,
-                  marginBottom: 10,
-                  fontSize: 18
-                }}
-              >
-                Morning: {this.state.morning}
-              </Text>
+            <View style={styles.app__cards}>
+              <View style={{ paddingLeft: 20, flex: 1 }}>
+                <Text style={styles.app__fontIcon}>&#xf185;</Text>
+              </View>
+              <View style={styles.app__cardRight}>
+                <Text style={styles.app__time}>
+                  {this.addZero(this.state.morning)}
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
 
@@ -148,58 +158,66 @@ class Settings extends React.Component {
             style={styles.app__timeSelect}
             onPress={this.timePickerA.bind(this)}
           >
-            <View>
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  fontWeight: "bold",
-                  marginTop: 10,
-                  marginBottom: 10,
-                  fontSize: 18
-                }}
-              >
-                Afternoon: {this.state.afternoon}
-              </Text>
+            <View style={styles.app__cards}>
+              <View style={{ paddingLeft: 20, flex: 1 }}>
+                <Text style={styles.app__fontIcon}>&#xf111;</Text>
+              </View>
+              <View style={styles.app__cardRight}>
+                <Text style={styles.app__time}>
+                  {this.addZero(this.state.afternoon)}
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.app__timeSelect}
             onPress={this.timePickerN.bind(this)}
           >
-            <View>
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  fontWeight: "bold",
-                  marginTop: 10,
-                  marginBottom: 10,
-                  fontSize: 18
-                }}
-              >
-                Night: {this.state.night}
-              </Text>
+            <View style={styles.app__cards}>
+              <View style={{ paddingLeft: 20, flex: 1 }}>
+                <Text style={styles.app__fontIcon}>&#xf186;</Text>
+              </View>
+              <View style={styles.app__cardRight}>
+                <Text style={styles.app__time}>
+                  {this.addZero(this.state.night)}
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity
-          style={styles.app__SettingsCloseButton}
-          onPress={this.handleBackButton.bind(this)}
-        >
-          <View>
-            <Text
-              style={{
-                paddingLeft: 10,
-                fontWeight: "bold",
-                marginTop: 10,
-                marginBottom: 10,
-                fontSize: 18
-              }}
-            >
-              Save Settings
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <View style={styles.app___notifyFooter}>
+          <TouchableOpacity
+            style={styles.app__notifyButton}
+            onPress={this.handleBackButton.bind(this)}
+          >
+            <View>
+              <Text
+                style={{
+                  fontFamily: "FontAwesome",
+                  fontSize: 40
+                }}
+              >
+                &#xf060;
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.app__notifyButton}
+            onPress={this.handleSaveButton.bind(this)}
+          >
+            <View>
+              <Text
+                style={{
+                  fontFamily: "FontAwesome",
+                  fontSize: 40
+                }}
+              >
+                &#xf00c;
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -213,6 +231,26 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#16CB93"
   },
+  app__CardHeader: {
+    marginLeft: 20,
+    marginRight: 20,
+    flexDirection: "row",
+    borderColor: "#fff",
+    backgroundColor: "#fff",
+    elevation: 6,
+    borderRadius: 20,
+    paddingLeft: 20,
+    marginBottom: 20,
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  app__cards: {
+    flex: 1,
+    flexDirection: "row"
+  },
+  app__cardRight: {
+    flex: 3
+  },
   app__Settings: {
     flex: 5,
     marginLeft: 20,
@@ -221,7 +259,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
 
     borderColor: "#fff",
     borderWidth: 0,
@@ -239,7 +277,9 @@ const styles = StyleSheet.create({
 
     borderColor: "#fff",
     borderWidth: 0,
-    borderRadius: 20
+    height: 20,
+    width: 20,
+    borderRadius: 100
   },
   app__timeSelect: {
     flex: 1,
@@ -249,9 +289,45 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 5,
     marginBottom: 5,
-    backgroundColor: "#16CB93",
+    backgroundColor: "#fff",
+    elevation: 4,
 
     borderRadius: 20
+  },
+  app___notifyFooter: {
+    flex: 2,
+    marginTop: 30,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    flexDirection: "row"
+  },
+  app__notifyButton: {
+    marginLeft: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 20,
+    marginBottom: 20,
+    backgroundColor: "#fff",
+    height: 100,
+    width: 100,
+    borderColor: "#fff",
+    borderWidth: 0,
+    elevation: 6,
+    borderRadius: 25
+  },
+  app__fontIcon: {
+    paddingTop: 15,
+    paddingLeft: 20,
+    fontFamily: "FontAwesome",
+    fontSize: 50,
+    color: "#16CB93"
+  },
+  app__time: {
+    fontWeight: "bold",
+    marginTop: 15,
+    paddingLeft: 20,
+    fontSize: 40
   }
 });
 
