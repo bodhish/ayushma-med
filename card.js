@@ -114,11 +114,13 @@ class Card extends React.Component {
               <Text
                 style={{
                   color: "#fff",
-                  fontSize: 20,
+                  fontSize: 18,
                   paddingBottom: 20
                 }}
               >
-                Morning | Evening | Night
+                {this.props.morning ? "| Morning " : ""}
+                {this.props.afternoon ? "| Afternoon " : ""}
+                {this.props.night ? "| Night " : ""}
               </Text>
             </View>
           </View>
