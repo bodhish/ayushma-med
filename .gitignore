@@ -28,3 +28,6 @@ build/
 .gradle
 local.properties
 *.iml
+
+android/app/ayushma-release-key.keystore
+android/gradle.properties
