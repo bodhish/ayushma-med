@@ -13,5 +13,6 @@ Run the following commands in terminal
 
 You can see the working app in `expo` app
 
-
 Made using [React Native 0.56](https://facebook.github.io/react-native/)
+
+[Privacy Policy](privacy_policy.md)
