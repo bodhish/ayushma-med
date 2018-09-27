@@ -28,7 +28,8 @@ class Card extends React.Component {
     const today = new Date();
     const date = new Date(this.props.date);
     const numberOfDays = date.getDate() - today.getDate();
-    const newID = this.props.id.substr(1, 10);
+    const newID = this.props.id.substr(0, 9);
+    console.log(this.props.id);
     for (i = 0; i <= numberOfDays; i++) {
       // TO Do : Store alarm id's with reminder object (this implementation is so lame)
       AndroidAlarms.clearAlarm(newID + "_m" + i);
